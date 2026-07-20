@@ -38,7 +38,7 @@ ItemEffects:
 	dw EvoStoneEffect      ; FIRE_STONE
 	dw EvoStoneEffect      ; THUNDERSTONE
 	dw EvoStoneEffect      ; WATER_STONE
-	dw NoEffect            ; ITEM_19
+	dw LaptopEffect        ; LAPTOP
 	dw VitaminEffect       ; HP_UP
 	dw VitaminEffect       ; PROTEIN
 	dw VitaminEffect       ; IRON
@@ -509,6 +509,19 @@ PokeBallEffect:
 	call PrintText
 
 	call ClearSprites
+	
+	ld a, [wTempSpecies]
+	ld l, a
+	ld a, [wCurPartyLevel]
+	ld h, a
+	push hl
+	farcall ApplyExperienceAfterEnemyCaught
+	pop hl
+	ld a, l
+	ld [wCurPartySpecies], a
+	ld [wTempSpecies], a
+	ld a, h
+	ld [wCurPartyLevel], a
 
 	ld a, [wTempSpecies]
 	dec a
@@ -2282,6 +2295,10 @@ UseRod:
 
 ItemfinderEffect:
 	farcall ItemFinder
+	ret
+	
+LaptopEffect:
+	farcall LaptopFunction
 	ret
 
 RestorePPEffect:

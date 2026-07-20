@@ -1616,6 +1616,29 @@ RodNothingText:
 UnusedNothingHereText: ; unreferenced
 	text_far _UnusedNothingHereText
 	text_end
+	
+LaptopFunction:
+	call .LoadLaptop
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+	
+.LoadLaptop:
+	ld a, [wPlayerState]
+	ld hl, Script_LoadLaptop
+	ld de, Script_LoadLaptop_Register
+	call .CheckIfRegistered
+	call QueueScript
+	ld a, TRUE
+	ret
+	
+.CheckIfRegistered:
+	ld a, [wUsingItemWithSelect]
+	and a
+	ret z
+	ld h, d
+	ld l, e
+	ret
 
 BikeFunction:
 	call .TryBike
@@ -1702,6 +1725,18 @@ BikeFunction:
 .nope
 	scf
 	ret
+
+Script_LoadLaptop:
+	reloadmappart
+	special UpdateTimePals
+Script_LoadLaptop_Register:
+	opentext
+	special PokemonCenterPC
+	closetext
+	reloadmappart
+	end
+	
+; new code place... come back here if you get into trouble.
 
 Script_GetOnBike:
 	refreshmap

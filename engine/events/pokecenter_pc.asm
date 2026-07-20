@@ -3,14 +3,16 @@
 	const PCPC_BEFORE_POKEDEX ; 0
 	const PCPC_BEFORE_HOF     ; 1
 	const PCPC_POSTGAME       ; 2
+	const PCPC_LAPTOP		  ; 3
 
 	; PokemonCenterPC.Jumptable indexes
 	const_def
-	const PCPCITEM_PLAYERS_PC   ; 0
-	const PCPCITEM_BILLS_PC     ; 1
-	const PCPCITEM_OAKS_PC      ; 2
-	const PCPCITEM_HALL_OF_FAME ; 3
-	const PCPCITEM_TURN_OFF     ; 4
+	const PCPCITEM_PLAYERS_PC    ; 0
+	const PCPCITEM_BILLS_PC      ; 1
+	const PCPCITEM_OAKS_PC       ; 2
+	const PCPCITEM_MOVE_REMINDER ; 3
+	const PCPCITEM_HALL_OF_FAME  ; 4
+	const PCPCITEM_TURN_OFF      ; 5
 
 PokemonCenterPC:
 	call PC_CheckPartyForPokemon
@@ -42,7 +44,7 @@ PokemonCenterPC:
 
 .TopMenu:
 	db MENU_BACKUP_TILES | MENU_NO_CLICK_SFX ; flags
-	menu_coords 0, 0, 15, 12
+	menu_coords 0, 0, 15, 14
 	dw .MenuData
 	db 1 ; default option
 
@@ -55,42 +57,55 @@ PokemonCenterPC:
 
 .Jumptable:
 ; entries correspond to PCPCITEM_* constants
-	dw PlayersPC,    .String_PlayersPC
-	dw BillsPC,      .String_BillsPC
-	dw OaksPC,       .String_OaksPC
-	dw HallOfFamePC, .String_HallOfFame
-	dw TurnOffPC,    .String_TurnOff
+	dw PlayersPC,      .String_PlayersPC
+	dw BillsPC,        .String_BillsPC
+	dw OaksPC,         .String_OaksPC
+	dw MoveReminderPC, .String_MoveReminder
+	dw HallOfFamePC,   .String_HallOfFame
+	dw TurnOffPC,      .String_TurnOff
 
-.String_PlayersPC:  db "<PLAYER>'s PC@"
-.String_BillsPC:    db "BILL's PC@"
-.String_OaksPC:     db "PROF.OAK's PC@"
-.String_HallOfFame: db "HALL OF FAME@"
-.String_TurnOff:    db "TURN OFF@"
+.String_PlayersPC:     db "<PLAYER>'s PC@"
+.String_BillsPC:       db "BILL's PC@"
+.String_OaksPC:        db "PROF.OAK's PC@"
+.String_MoveReminder   db "MOVE REMINDER@"
+.String_HallOfFame:    db "HALL OF FAME@"
+.String_TurnOff:       db "TURN OFF@"
 
 .WhichPC:
 ; entries correspond to PCPC_* constants
 
 	; PCPC_BEFORE_POKEDEX
-	db 3
+	db 4
 	db PCPCITEM_BILLS_PC
 	db PCPCITEM_PLAYERS_PC
+	db PCPCITEM_MOVE_REMINDER
 	db PCPCITEM_TURN_OFF
 	db -1 ; end
 
 	; PCPC_BEFORE_HOF
-	db 4
-	db PCPCITEM_BILLS_PC
-	db PCPCITEM_PLAYERS_PC
-	db PCPCITEM_OAKS_PC
-	db PCPCITEM_TURN_OFF
-	db -1 ; end
-
-	; PCPC_POSTGAME
 	db 5
 	db PCPCITEM_BILLS_PC
 	db PCPCITEM_PLAYERS_PC
 	db PCPCITEM_OAKS_PC
+	db PCPCITEM_MOVE_REMINDER
+	db PCPCITEM_TURN_OFF
+	db -1 ; end
+
+	; PCPC_POSTGAME
+	db 6
+	db PCPCITEM_BILLS_PC
+	db PCPCITEM_PLAYERS_PC
+	db PCPCITEM_OAKS_PC
+	db PCPCITEM_MOVE_REMINDER
 	db PCPCITEM_HALL_OF_FAME
+	db PCPCITEM_TURN_OFF
+	db -1 ; end
+	
+	; PCPC_LAPTOP
+	db 5
+	db PCPCITEM_BILLS_PC
+	db PCPCITEM_PLAYERS_PC
+	db PCPCITEM_MOVE_REMINDER
 	db PCPCITEM_TURN_OFF
 	db -1 ; end
 
@@ -163,6 +178,12 @@ OaksPC:
 	farcall ProfOaksPC
 	and a
 	ret
+	
+MoveReminderPC:
+    call PC_PlayChoosePCSound
+    farcall MoveReminder
+    and a
+    ret
 
 HallOfFamePC:
 	call PC_PlayChoosePCSound
@@ -464,6 +485,11 @@ PlayerDepositItemMenu:
 	text_end
 
 .TryDepositItem:
+	farcall CheckItemPocket
+	ld a, [wItemAttributeValue]
+	cp TM_HM
+	jr z, .CantDeposit
+
 	ld a, [wSpriteUpdatesEnabled]
 	push af
 	ld a, FALSE
@@ -475,6 +501,15 @@ PlayerDepositItemMenu:
 	pop af
 	ld [wSpriteUpdatesEnabled], a
 	ret
+
+.CantDeposit
+	ld hl, .CantDepositText
+	call MenuTextboxBackup ; push text to queue
+	ret
+
+.CantDepositText
+	text_far _CantDepositText
+	text_end
 
 .dw
 ; entries correspond to ITEMMENU_* constants
@@ -677,3 +712,6 @@ PokecenterOaksPCText:
 PokecenterPCOaksClosedText:
 	text_far _PokecenterPCOaksClosedText
 	text_end
+
+
+; This is where you started the new PC MENU, in case you need to delete and go back. 

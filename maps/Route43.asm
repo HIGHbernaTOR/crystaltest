@@ -182,8 +182,8 @@ TrainerPicnickerTiffany:
 	opentext
 	checkflag ENGINE_TIFFANY_READY_FOR_REMATCH
 	iftrue .WantsBattle
-	checkflag ENGINE_TIFFANY_HAS_PINK_BOW
-	iftrue .HasPinkBow
+	checkflag ENGINE_TIFFANY_HAS_POLKADOT_BOW
+	iftrue .HasPolkadotBow
 	checkcellnum PHONE_PICNICKER_TIFFANY
 	iftrue .NumberAccepted
 	checkpoke CLEFAIRY
@@ -254,12 +254,12 @@ TrainerPicnickerTiffany:
 	clearflag ENGINE_TIFFANY_READY_FOR_REMATCH
 	end
 
-.HasPinkBow:
+.HasPolkadotBow:
 	scall .Gift
-	verbosegiveitem PINK_BOW
+	verbosegiveitem POLKADOT_BOW
 	iffalse .NoRoom
-	clearflag ENGINE_TIFFANY_HAS_PINK_BOW
-	setevent EVENT_TIFFANY_GAVE_PINK_BOW
+	clearflag ENGINE_TIFFANY_HAS_POLKADOT_BOW
+	setevent EVENT_TIFFANY_GAVE_POLKADOT_BOW
 	sjump .NumberAccepted
 
 .NoRoom:

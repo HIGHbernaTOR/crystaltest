@@ -15,9 +15,10 @@ GoldenrodPokecenter1FNurseScript:
 	jumpstd PokecenterNurseScript
 
 GoldenrodPokecenter1F_GSBallSceneLeft:
-	setval BATTLETOWERACTION_GSBALL
-	special BattleTowerAction
-	ifequal GS_BALL_AVAILABLE, .gsball
+	checkevent EVENT_BEAT_ELITE_FOUR
+	setval SUICUNE
+	special FindPartyMonThatSpecies
+	iftrue .gsball
 	end
 
 .gsball
@@ -47,9 +48,10 @@ GoldenrodPokecenter1F_GSBallSceneLeft:
 	end
 
 GoldenrodPokecenter1F_GSBallSceneRight:
-	setval BATTLETOWERACTION_GSBALL
-	special BattleTowerAction
-	ifequal GS_BALL_AVAILABLE, .gsball
+	checkevent EVENT_BEAT_ELITE_FOUR
+	setval SUICUNE
+	special FindPartyMonThatSpecies
+	iftrue .gsball
 	end
 
 .gsball

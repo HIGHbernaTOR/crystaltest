@@ -63,21 +63,19 @@ MeetMomScript:
 .DayOfWeekDone:
 	writetext ComeHomeForDSTText
 	yesorno
-	iffalse .ExplainPhone
-	sjump .KnowPhone
+	iffalse .ExplainRunningShoes
+	sjump .KnowRunningShoes
 
-.KnowPhone:
-	writetext KnowTheInstructionsText
+.KnowRunningShoes:
+	sjump .FinishRunningShoes
+
+.ExplainRunningShoes:
+	writetext MomInstructionsText
 	promptbutton
-	sjump .FinishPhone
+	sjump .FinishRunningShoes
 
-.ExplainPhone:
-	writetext DontKnowTheInstructionsText
-	promptbutton
-	sjump .FinishPhone
-
-.FinishPhone:
-	writetext InstructionsNextText
+.FinishRunningShoes:
+	writetext MomOutroText
 	waitbutton
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -157,7 +155,7 @@ NeighborScript:
 	iftrue .MornScript
 	checktime DAY
 	iftrue .DayScript
-	checktime NITE
+	checktime EVE | NITE
 	iftrue .NiteScript
 
 .MornScript:
@@ -257,36 +255,24 @@ ComeHomeForDSTText:
 	para "for Daylight"
 	line "Saving Time."
 
-	para "By the way, do you"
-	line "know how to use"
-	cont "the PHONE?"
+	para "By the way, do"
+	line "you know how to"
+    
+	para "use your new"
+	line "Running Shoes?"
 	done
 
-KnowTheInstructionsText:
-	text "Don't you just"
-	line "turn the #GEAR"
-
-	para "on and select the"
-	line "PHONE icon?"
-	done
-
-DontKnowTheInstructionsText:
+MomInstructionsText:
 	text "I'll read the"
 	line "instructions."
 
-	para "Turn the #GEAR"
-	line "on and select the"
-	cont "PHONE icon."
+	para "Just hold down the"
+	line "B Button to run,"
+	cont "indoors or out."
 	done
 
-InstructionsNextText:
-	text "Phone numbers are"
-	line "stored in memory."
-
-	para "Just choose a name"
-	line "you want to call."
-
-	para "Gee, isn't that"
+MomOutroText:
+	text "Gee, aren't they"
 	line "convenient?"
 	done
 
@@ -405,5 +391,6 @@ PlayersHouse1F_MapEvents:
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
 	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  4,  3, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, EVE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR

@@ -1215,6 +1215,7 @@ BattleCommand_Stab:
 ; STAB = Same Type Attack Bonus
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
+	and TYPE_MASK
 	cp STRUGGLE
 	ret z
 
@@ -1243,6 +1244,7 @@ BattleCommand_Stab:
 .go
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVarAddr
+	and TYPE_MASK
 	ld [wCurType], a
 
 	push hl
@@ -1409,6 +1411,7 @@ CheckTypeMatchup:
 	push bc
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	and TYPE_MASK
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -2108,13 +2111,48 @@ BattleCommand_ApplyDamage:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_ENDURE, a
-	jr z, .focus_band
+	jr z, .friendship_endure
 
 	call BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
 	ld b, 1
 	jr .damage
+
+.friendship_endure
+	ld a, [wLinkMode]
+	and a
+	jr nz, .focus_band
+
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .focus_band
+
+	ld hl, wBattleMonHappiness
+	ld a, [hl]
+	ld b, 25 percent + 1
+	cp 255
+	jr z, .friendship_endure_checks
+
+	ld b, 18 percent + 1
+	cp 220
+	jr nc, .friendship_endure_checks
+
+	ld b, 12 percent + 1
+	cp 180
+	jr c, .focus_band
+	; fallthrough
+.friendship_endure_checks
+	call BattleRandom
+	cp b
+	jr nc, .focus_band
+
+	call BattleCommand_FalseSwipe
+	ld b, 0
+	jr nc, .damage
+	ld b, 3
+	jr .damage
+
 
 .focus_band
 	call GetOpponentItem
@@ -2151,7 +2189,13 @@ BattleCommand_ApplyDamage:
 	ret z
 
 	dec a
-	jr nz, .focus_band_text
+	jr z, .endured_text
+	dec a
+	jr z, .focus_band_text
+	ld hl, EnduredFriendshipText
+	jp StdBattleTextbox
+
+.endured_text
 	ld hl, EnduredText
 	jp StdBattleTextbox
 
@@ -2903,6 +2947,7 @@ BattleCommand_DamageCalc:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
+	and TYPE_MASK
 
 ; Selfdestruct and Explosion halve defense.
 	cp EFFECT_SELFDESTRUCT
@@ -5922,6 +5967,7 @@ CheckMoveTypeMatchesTarget:
 
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
+	and TYPE_MASK
 	cp NORMAL
 	jr z, .normal
 

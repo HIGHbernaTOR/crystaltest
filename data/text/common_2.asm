@@ -560,15 +560,8 @@ _ItemfinderNopeText::
 _PoisonFaintText::
 	text_ram wStringBuffer3
 	text_start
-	line "fainted!"
-	prompt
-
-_PoisonWhiteoutText::
-	text "<PLAYER> is out of"
-	line "useable #MON!"
-
-	para "<PLAYER> whited"
-	line "out!"
+	line "survived the"
+	cont "poisoning!"
 	prompt
 
 _UseSweetScentText::
@@ -1575,3 +1568,9 @@ _OakText5::
 	para "That's why I study"
 	line "#MON every day."
 	prompt
+	
+_CantDepositText::
+	text "Can't deposit"
+	line "this item."
+	prompt
+

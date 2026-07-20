@@ -14,6 +14,7 @@ ElmsLab_MapScripts:
 	scene_script ElmsLabNoop3Scene,   SCENE_ELMSLAB_MEET_OFFICER
 	scene_script ElmsLabNoop4Scene,   SCENE_ELMSLAB_UNUSED
 	scene_script ElmsLabNoop5Scene,   SCENE_ELMSLAB_AIDE_GIVES_POTION
+	scene_script ElmsLabNoop5Scene,   SCENE_ELMSLAB_NOTHING
 	scene_const SCENE_ELMSLAB_AIDE_GIVES_POKE_BALLS
 
 	def_callbacks
@@ -460,6 +461,7 @@ AideScript_WalkPotion1:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight1
 	turnobject PLAYER, DOWN
 	scall AideScript_GivePotion
+	scall AideScript_GiveLaptop
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksLeft1
 	end
 
@@ -467,6 +469,7 @@ AideScript_WalkPotion2:
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksRight2
 	turnobject PLAYER, DOWN
 	scall AideScript_GivePotion
+	scall AideScript_GiveLaptop
 	applymovement ELMSLAB_ELMS_AIDE, AideWalksLeft2
 	end
 
@@ -478,7 +481,17 @@ AideScript_GivePotion:
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
-	setscene SCENE_ELMSLAB_NOOP
+	end
+	
+AideScript_GiveLaptop:
+	opentext
+	writetext AideText_GetLaptopText
+	promptbutton
+	giveitem LAPTOP
+	writetext AideText_LaptopInfoText
+	waitbutton
+	closetext
+	setscene SCENE_ELMSLAB_NOTHING
 	end
 
 AideScript_WalkBalls1:
@@ -1366,6 +1379,18 @@ ElmsLabPCText:
 
 	para "…It says on the"
 	line "screen…"
+	done
+	
+AideText_GetLaptopText:
+	text "Oh, I have this"
+	line "for you too."
+
+	para "It's a Laptop!"
+	done
+	
+AideText_LaptopInfoText:
+	text "Use this to manage"
+	line "your party."
 	done
 
 ElmsLab_MapEvents:

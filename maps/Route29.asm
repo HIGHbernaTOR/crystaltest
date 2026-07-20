@@ -150,7 +150,7 @@ Route29CooltrainerMScript:
 	opentext
 	checktime DAY
 	iftrue .day_morn
-	checktime NITE
+	checktime EVE | NITE
 	iftrue .nite
 .day_morn
 	writetext Route29CooltrainerMText_WaitingForNight
@@ -167,7 +167,7 @@ Route29CooltrainerMScript:
 TuscanyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_PINK_BOW_FROM_TUSCANY
+	checkevent EVENT_GOT_POLKADOT_BOW_FROM_TUSCANY
 	iftrue TuscanyTuesdayScript
 	readvar VAR_WEEKDAY
 	ifnotequal TUESDAY, TuscanyNotTuesdayScript
@@ -179,9 +179,9 @@ TuscanyScript:
 .MetTuscany:
 	writetext TuscanyGivesGiftText
 	promptbutton
-	verbosegiveitem PINK_BOW
+	verbosegiveitem POLKADOT_BOW
 	iffalse TuscanyDoneScript
-	setevent EVENT_GOT_PINK_BOW_FROM_TUSCANY
+	setevent EVENT_GOT_POLKADOT_BOW_FROM_TUSCANY
 	writetext TuscanyGaveGiftText
 	waitbutton
 	closetext
@@ -334,8 +334,9 @@ Route29CooltrainerMText_WaitingForNight:
 	text "I'm waiting for"
 	line "#MON that"
 
-	para "appear only at"
-	line "night."
+	para "appear only in"
+	line "the evening or"
+	cont "at night."
 	done
 
 Route29CooltrainerMText_WaitingForMorning:
@@ -365,7 +366,7 @@ TuscanyGivesGiftText:
 	line "duction, please"
 
 	para "accept this gift,"
-	line "a PINK BOW."
+	line "a POLKADOT BOW."
 	done
 
 TuscanyGaveGiftText:

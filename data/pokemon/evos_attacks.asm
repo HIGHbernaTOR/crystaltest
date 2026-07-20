@@ -5,7 +5,7 @@ SECTION "Evolutions and Attacks", ROMX
 ;    * db EVOLVE_LEVEL, level, species
 ;    * db EVOLVE_ITEM, used item, species
 ;    * db EVOLVE_TRADE, held item (or -1 for none), species
-;    * db EVOLVE_HAPPINESS, TR_* constant (ANYTIME, MORNDAY, NITE), species
+;    * db EVOLVE_HAPPINESS, TR_* constant (ANYTIME, MORNDAY, EVENITE), species
 ;    * db EVOLVE_STAT, level, ATK_*_DEF constant (LT, GT, EQ), species
 ; - db 0 ; no more evolutions
 ; - Learnset (in increasing level order):
@@ -472,6 +472,7 @@ ClefairyEvosAttacks:
 	db 13, DOUBLESLAP
 	db 19, MINIMIZE
 	db 26, DEFENSE_CURL
+	db 30, DAZZLINGLEAM
 	db 34, METRONOME
 	db 43, MOONLIGHT
 	db 53, LIGHT_SCREEN
@@ -483,6 +484,7 @@ ClefableEvosAttacks:
 	db 1, DOUBLESLAP
 	db 1, METRONOME
 	db 1, MOONLIGHT
+	db 1, DAZZLINGLEAM
 	db 0 ; no more level-up moves
 
 VulpixEvosAttacks:
@@ -517,7 +519,7 @@ JigglypuffEvosAttacks:
 	db 19, ROLLOUT
 	db 24, DOUBLESLAP
 	db 29, REST
-	db 34, BODY_SLAM
+	db 35, PLAY_ROUGH
 	db 39, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
@@ -527,6 +529,7 @@ WigglytuffEvosAttacks:
 	db 1, DISABLE
 	db 1, DEFENSE_CURL
 	db 1, DOUBLESLAP
+	db 47, PLAY_ROUGH
 	db 0 ; no more level-up moves
 
 ZubatEvosAttacks:
@@ -689,7 +692,7 @@ MeowthEvosAttacks:
 	db 20, PAY_DAY
 	db 28, FAINT_ATTACK
 	db 35, SCREECH
-	db 41, FURY_SWIPES
+	db 40, PLAY_ROUGH
 	db 46, SLASH
 	db 0 ; no more level-up moves
 
@@ -704,6 +707,7 @@ PersianEvosAttacks:
 	db 38, SCREECH
 	db 46, FURY_SWIPES
 	db 53, SLASH
+	db 55, PLAY_ROUGH
 	db 0 ; no more level-up moves
 
 PsyduckEvosAttacks:
@@ -1663,6 +1667,7 @@ MrMimeEvosAttacks:
 	db 31, ENCORE
 	db 36, PSYBEAM
 	db 41, BATON_PASS
+	db 44, DAZZLINGLEAM
 	db 46, SAFEGUARD
 	db 0 ; no more level-up moves
 
@@ -1796,7 +1801,7 @@ EeveeEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, VAPOREON
 	db EVOLVE_ITEM, FIRE_STONE, FLAREON
 	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
-	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
+	db EVOLVE_HAPPINESS, TR_EVENITE, UMBREON
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, TAIL_WHIP
@@ -2431,6 +2436,7 @@ MareepEvosAttacks:
 	db 23, COTTON_SPORE
 	db 30, LIGHT_SCREEN
 	db 37, THUNDER
+	db 39, DAZZLINGLEAM
 	db 0 ; no more level-up moves
 
 FlaaffyEvosAttacks:
@@ -2444,6 +2450,7 @@ FlaaffyEvosAttacks:
 	db 27, COTTON_SPORE
 	db 36, LIGHT_SCREEN
 	db 45, THUNDER
+	db 47, DAZZLINGLEAM
 	db 0 ; no more level-up moves
 
 AmpharosEvosAttacks:
@@ -2457,6 +2464,7 @@ AmpharosEvosAttacks:
 	db 27, COTTON_SPORE
 	db 30, THUNDERPUNCH
 	db 42, LIGHT_SCREEN
+	db 51, DAZZLINGLEAM
 	db 57, THUNDER
 	db 0 ; no more level-up moves
 
@@ -2478,6 +2486,7 @@ MarillEvosAttacks:
 	db 10, WATER_GUN
 	db 15, ROLLOUT
 	db 21, BUBBLEBEAM
+	db 25, PLAY_ROUGH
 	db 28, DOUBLE_EDGE
 	db 36, RAIN_DANCE
 	db 0 ; no more level-up moves
@@ -2493,6 +2502,7 @@ AzumarillEvosAttacks:
 	db 10, WATER_GUN
 	db 15, ROLLOUT
 	db 25, BUBBLEBEAM
+	db 30, PLAY_ROUGH
 	db 36, DOUBLE_EDGE
 	db 48, RAIN_DANCE
 	db 0 ; no more level-up moves
@@ -2699,6 +2709,7 @@ MisdreavusEvosAttacks:
 	db 12, CONFUSE_RAY
 	db 19, MEAN_LOOK
 	db 27, PSYBEAM
+	db 32, DAZZLINGLEAM
 	db 36, PAIN_SPLIT
 	db 46, PERISH_SONG
 	db 0 ; no more level-up moves
@@ -2805,6 +2816,7 @@ SnubbullEvosAttacks:
 	db 19, LICK
 	db 26, ROAR
 	db 34, RAGE
+	db 37, PLAY_ROUGH
 	db 43, TAKE_DOWN
 	db 0 ; no more level-up moves
 
@@ -2818,6 +2830,7 @@ GranbullEvosAttacks:
 	db 19, LICK
 	db 28, ROAR
 	db 38, RAGE
+	db 43, PLAY_ROUGH
 	db 51, TAKE_DOWN
 	db 0 ; no more level-up moves
 
@@ -2895,6 +2908,7 @@ TeddiursaEvosAttacks:
 	db 15, FURY_SWIPES
 	db 22, FAINT_ATTACK
 	db 29, REST
+	db 32, PLAY_ROUGH
 	db 36, SLASH
 	db 43, SNORE
 	db 50, THRASH
@@ -2910,6 +2924,7 @@ UrsaringEvosAttacks:
 	db 15, FURY_SWIPES
 	db 22, FAINT_ATTACK
 	db 29, REST
+	db 37, PLAY_ROUGH
 	db 39, SLASH
 	db 49, SNORE
 	db 59, THRASH
@@ -3210,6 +3225,7 @@ MiltankEvosAttacks:
 	db 26, BIDE
 	db 34, ROLLOUT
 	db 43, BODY_SLAM
+	db 45, PLAY_ROUGH
 	db 53, HEAL_BELL
 	db 0 ; no more level-up moves
 

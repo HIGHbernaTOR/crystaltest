@@ -129,6 +129,9 @@ wSpriteUpdatesEnabled:: db
 
 wUnusedScriptByte:: db
 
+; come back here if yu need to backtrack
+wUsingLaptopPC:: db 
+
 wMapTimeOfDay:: db
 
 	ds 3
@@ -1556,7 +1559,7 @@ NEXTU
 ; trainer card badges
 wTrainerCardBadgeFrameCounter:: db
 wTrainerCardBadgeTileID:: db
-wTrainerCardBadgeAttributes:: db
+wTrainerCardBadgePaletteAddr:: dw
 
 NEXTU
 ; slot machine
@@ -2252,7 +2255,7 @@ wStringBuffer5:: ds STRING_BUFFER_LENGTH
 
 wBattleMenuCursorPosition:: db
 
-	ds 1
+wBuffer1:: db
 
 wCurBattleMon::
 ; index of the player's mon currently in battle (0-5)
@@ -2693,11 +2696,12 @@ wCurBaseDataEnd::
 
 wCurDamage:: dw
 
-	ds 2
+	ds 1
 
 wMornEncounterRate::  db
 wDayEncounterRate::   db
 wNiteEncounterRate::  db
+wEveEncounterRate::   db
 wWaterEncounterRate:: db
 wListMoves_MoveIndicesBuffer:: ds NUM_MOVES
 wPutativeTMHMMove:: db

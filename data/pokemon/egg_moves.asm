@@ -561,6 +561,7 @@ MarillEggMoves:
 	db PERISH_SONG
 	db SUPERSONIC
 	db FORESIGHT
+	db PLAY_ROUGH
 	db -1 ; end
 
 SudowoodoEggMoves:
@@ -653,6 +654,7 @@ SnubbullEggMoves:
 	db HEAL_BELL
 	db LICK
 	db LEER
+	db PLAY_ROUGH
 	db -1 ; end
 
 QwilfishEggMoves:
@@ -687,6 +689,7 @@ TeddiursaEggMoves:
 	db FOCUS_ENERGY
 	db COUNTER
 	db METAL_CLAW
+	db PLAY_ROUGH
 	db -1 ; end
 
 SlugmaEggMoves:
@@ -754,6 +757,7 @@ PhanpyEggMoves:
 	db BODY_SLAM
 	db ANCIENTPOWER
 	db WATER_GUN
+	db PLAY_ROUGH
 	db -1 ; end
 
 StantlerEggMoves:
