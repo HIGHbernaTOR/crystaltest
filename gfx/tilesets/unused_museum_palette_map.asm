@@ -1,5 +1,5 @@
 ; Matches pokered's "gate" tileset (notable for its Pewter Museum tiles)
-; https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver#Unused_Tileset_Palette_Data
+; https://tcrf.net/Pok%C3%A9mon_Gold_and_Silver#Unused_Tile_Palette_Assignment_Data
 
 	tilepal 0, WATER, RED, YELLOW, YELLOW, RED, GREEN, GREEN, BROWN
 	tilepal 0, BROWN, BROWN, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY
@@ -13,11 +13,10 @@
 	tilepal 0, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, RED, RED
 	tilepal 0, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY
 	tilepal 0, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY
-
-rept 16
-	db $ff
-endr
-
+	tilepal 0, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF
+	tilepal 0, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF
+	tilepal 0, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF
+	tilepal 0, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF, ROOF, TEXT
 	tilepal 1, WATER, RED, YELLOW, YELLOW, RED, GREEN, GREEN, BROWN
 	tilepal 1, BROWN, BROWN, GRAY, GRAY, GRAY, GRAY, GRAY, GRAY
 	tilepal 1, GRAY, GRAY, YELLOW, YELLOW, RED, GREEN, GREEN, BROWN
