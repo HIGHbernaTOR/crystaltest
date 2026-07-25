@@ -860,9 +860,10 @@ LoadOrangePage:
 	ret
 
 .times
-	db "MORN@"
-	db "DAY@"
-	db "NITE@"
+	db "IN THE MORN@"
+	db "DURING THE DAY@"
+	db "IN THE EVE@"
+	db "AT NITE@"
 
 .placeCaughtLevel
 	; caught level
