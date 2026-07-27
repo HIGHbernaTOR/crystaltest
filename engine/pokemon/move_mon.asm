@@ -226,23 +226,35 @@ rept NUM_MOVES
 	inc de
 endr
 
-	; Initialize happiness.
+; Initialize happiness.
 	ld a, BASE_HAPPINESS
 	ld [de], a
 	inc de
 
 	xor a
-	; PokerusStatus
-	ld [de], a
-	inc de
-	; CaughtData/CaughtTime/CaughtLevel
-	ld [de], a
-	inc de
-	; CaughtGender/CaughtLocation
+; PokerusStatus
 	ld [de], a
 	inc de
 
-	; Initialize level.
+; Nature
+	push hl
+	push de
+	call GetRandomNature
+	ld a, [wStringBuffer1]
+	pop de
+	pop hl
+	ld [de], a
+	inc de
+
+	xor a
+; CaughtData/CaughtTime/CaughtLevel
+	ld [de], a
+	inc de
+; CaughtGender/CaughtLocation
+	ld [de], a
+	inc de
+
+; Initialize level.
 	ld a, [wCurPartyLevel]
 	ld [de], a
 	inc de
@@ -289,23 +301,35 @@ endr
 	jr nz, .wildmonpploop
 	pop hl
 
-	; Initialize happiness.
+; Initialize happiness.
 	ld a, BASE_HAPPINESS
 	ld [de], a
 	inc de
 
 	xor a
-	; PokerusStatus
-	ld [de], a
-	inc de
-	; CaughtData/CaughtTime/CaughtLevel
-	ld [de], a
-	inc de
-	; CaughtGender/CaughtLocation
+; PokerusStatus
 	ld [de], a
 	inc de
 
-	; Initialize level.
+; Nature
+	push hl
+	push de
+	call GetRandomNature
+	ld a, [wStringBuffer1]
+	pop de
+	pop hl
+	ld [de], a
+	inc de
+
+	xor a
+; CaughtData/CaughtTime/CaughtLevel
+	ld [de], a
+	inc de
+; CaughtGender/CaughtLocation
+	ld [de], a
+	inc de
+
+; Initialize level.
 	ld a, [wCurPartyLevel]
 	ld [de], a
 	inc de
@@ -362,6 +386,17 @@ endr
 .done
 	scf ; When this function returns, the carry flag indicates success vs failure.
 	ret
+
+; Return a random Nature.
+;
+; Output:
+;   wStringBuffer1 = random Nature ID
+GetRandomNature:
+	ld a, NUM_NATURES
+	call RandomRange
+	ld [wStringBuffer1], a
+	ret
+
 
 FillPP:
 	push bc

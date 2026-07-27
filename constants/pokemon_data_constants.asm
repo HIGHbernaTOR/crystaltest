@@ -90,6 +90,7 @@ DEF MON_DVS                rw
 DEF MON_PP                 rb NUM_MOVES
 DEF MON_HAPPINESS          rb
 DEF MON_POKERUS            rb
+DEF MON_NATURE			   rb
 DEF MON_CAUGHTDATA         rw
 rsset MON_CAUGHTDATA
 DEF MON_CAUGHTTIME         rb
@@ -111,6 +112,49 @@ DEF MON_SPD                rw
 DEF MON_SAT                rw
 DEF MON_SDF                rw
 DEF PARTYMON_STRUCT_LENGTH EQU _RS
+
+
+; Nature values
+; Keep this order consistent with Generations III onward.
+	const_def
+	const NATURE_HARDY
+	const NATURE_LONELY
+	const NATURE_BRAVE
+	const NATURE_ADAMANT
+	const NATURE_NAUGHTY
+	const NATURE_BOLD
+	const NATURE_DOCILE
+	const NATURE_RELAXED
+	const NATURE_IMPISH
+	const NATURE_LAX
+	const NATURE_TIMID
+	const NATURE_HASTY
+	const NATURE_SERIOUS
+	const NATURE_JOLLY
+	const NATURE_NAIVE
+	const NATURE_MODEST
+	const NATURE_MILD
+	const NATURE_QUIET
+	const NATURE_BASHFUL
+	const NATURE_RASH
+	const NATURE_CALM
+	const NATURE_GENTLE
+	const NATURE_SASSY
+	const NATURE_CAREFUL
+	const NATURE_QUIRKY
+DEF NUM_NATURES EQU const_value
+
+; Stats affected by Natures
+	const_def
+	const NATURE_STAT_ATK    ; attack  = 0
+	const NATURE_STAT_DEF    ; defense = 1
+	const NATURE_STAT_SPD    ; speed   = 2
+	const NATURE_STAT_SAT    ; spattk  = 3   
+	const NATURE_STAT_SDF    ; spdef   = 4
+DEF NUM_NATURE_STATS EQU const_value
+
+DEF NATURE_NEUTRAL EQU $ff   ; neutral = $ff
+
 
 DEF NICKNAMED_MON_STRUCT_LENGTH EQU PARTYMON_STRUCT_LENGTH + MON_NAME_LENGTH
 DEF REDMON_STRUCT_LENGTH EQU 44

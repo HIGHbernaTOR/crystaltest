@@ -764,6 +764,7 @@ LoadGreenPage:
 
 LoadBluePage:
 	call .PlaceOTInfo
+	call .PlaceNature
 	hlcoord 10, 8
 	ld de, SCREEN_WIDTH
 	ld b, 10
@@ -809,6 +810,28 @@ LoadBluePage:
 	ld [hl], a
 .done
 	ret
+
+
+.PlaceNature:
+	ld de, .NatureString
+	hlcoord 0, 15
+	call PlaceString
+	
+; DEBUG: display the raw Nature value
+	ld a, [wTempMonNature]
+	ld [wTextDecimalByte], a
+	hlcoord 7, 15
+	ld de, wTextDecimalByte
+	lb bc, 1, 3
+	call PrintNum
+
+	farcall GetNatureName
+	hlcoord 2, 16
+	call PlaceString
+	ret
+
+.NatureString:
+	db "NATURE/@"
 
 .OTNamePointers:
 	dw wPartyMonOTs

@@ -3326,7 +3326,7 @@ wPartyMon{d:n}Nickname:: ds MON_NAME_LENGTH
 endr
 wPartyMonNicknamesEnd::
 
-	ds 22
+	ds 14
 
 wPokedexCaught:: flag_array NUM_POKEMON
 wEndPokedexCaught::
@@ -3445,7 +3445,7 @@ w3_d090:: ds $70
 
 w3_d100::
 wBT_OTTrainer:: battle_tower_struct wBT_OT
-	ds $20
+	ds $b
 wBT_TrainerTextIndex:: db
 	ds 1
 w3_d202:: battle_tower_struct w3_d202

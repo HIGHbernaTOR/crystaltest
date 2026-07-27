@@ -18,7 +18,9 @@ BattleTowerMons:
 	dn 13, 13, 11, 13 ; DVs
 	db 15, 5, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 41 ; HP
@@ -44,7 +46,9 @@ BattleTowerMons:
 	dn 14, 13, 15, 11 ; DVs
 	db 10, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 39 ; HP
@@ -70,7 +74,9 @@ BattleTowerMons:
 	dn 13, 11, 14, 15 ; DVs
 	db 15, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 46 ; HP
@@ -96,7 +102,9 @@ BattleTowerMons:
 	dn 7, 15, 13, 7 ; DVs
 	db 20, 20, 25, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 66 ; HP
@@ -122,7 +130,9 @@ BattleTowerMons:
 	dn 14, 15, 12, 15 ; DVs
 	db 15, 5, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 47 ; HP
@@ -148,7 +158,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 13 ; DVs
 	db 15, 10, 20, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 38 ; HP
@@ -174,7 +186,9 @@ BattleTowerMons:
 	dn 11, 11, 13, 15 ; DVs
 	db 5, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 46 ; HP
@@ -200,7 +214,9 @@ BattleTowerMons:
 	dn 13, 11, 15, 11 ; DVs
 	db 5, 20, 10, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 43 ; HP
@@ -226,7 +242,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 11 ; DVs
 	db 5, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 52 ; HP
@@ -252,7 +270,9 @@ BattleTowerMons:
 	dn 15, 11, 11, 15 ; DVs
 	db 20, 20, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 38 ; HP
@@ -278,7 +298,9 @@ BattleTowerMons:
 	dn 15, 11, 13, 14 ; DVs
 	db 10, 5, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 44 ; HP
@@ -304,7 +326,9 @@ BattleTowerMons:
 	dn 14, 15, 13, 15 ; DVs
 	db 5, 5, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 37 ; HP
@@ -330,7 +354,9 @@ BattleTowerMons:
 	dn 15, 13, 15, 14 ; DVs
 	db 20, 10, 20, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 36 ; HP
@@ -356,7 +382,9 @@ BattleTowerMons:
 	dn 14, 13, 15, 13 ; DVs
 	db 20, 10, 15, 30 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 39 ; HP
@@ -382,7 +410,9 @@ BattleTowerMons:
 	dn 13, 15, 12, 14 ; DVs
 	db 15, 10, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 77 ; HP
@@ -408,7 +438,9 @@ BattleTowerMons:
 	dn 14, 15, 15, 7 ; DVs
 	db 15, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 57 ; HP
@@ -434,7 +466,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 14 ; DVs
 	db 10, 5, 10, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 45 ; HP
@@ -460,7 +494,9 @@ BattleTowerMons:
 	dn 15, 7, 15, 7 ; DVs
 	db 15, 10, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 43 ; HP
@@ -486,7 +522,9 @@ BattleTowerMons:
 	dn 15, 15, 15, 15 ; DVs
 	db 15, 0, 0, 0 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 36 ; HP
@@ -512,7 +550,9 @@ BattleTowerMons:
 	dn 6, 5, 5, 7 ; DVs
 	db 15, 15, 30, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 40 ; HP
@@ -538,7 +578,9 @@ BattleTowerMons:
 	dn 7, 3, 6, 7 ; DVs
 	db 10, 10, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
 	bigdw 34 ; HP
@@ -567,7 +609,9 @@ BattleTowerMons:
 	dn 12, 15, 11, 12 ; DVs
 	db 10, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 81 ; HP
@@ -593,7 +637,9 @@ BattleTowerMons:
 	dn 13, 11, 13, 11 ; DVs
 	db 20, 10, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 71 ; HP
@@ -619,7 +665,9 @@ BattleTowerMons:
 	dn 15, 10, 15, 13 ; DVs
 	db 5, 10, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 83 ; HP
@@ -645,7 +693,9 @@ BattleTowerMons:
 	dn 15, 15, 15, 15 ; DVs
 	db 20, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 77 ; HP
@@ -671,7 +721,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 15 ; DVs
 	db 10, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 68 ; HP
@@ -697,7 +749,9 @@ BattleTowerMons:
 	dn 13, 11, 15, 11 ; DVs
 	db 15, 20, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 81 ; HP
@@ -723,7 +777,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 14 ; DVs
 	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 78 ; HP
@@ -749,7 +805,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 11 ; DVs
 	db 5, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 83 ; HP
@@ -775,7 +833,9 @@ BattleTowerMons:
 	dn 15, 11, 11, 11 ; DVs
 	db 10, 5, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 78 ; HP
@@ -801,7 +861,9 @@ BattleTowerMons:
 	dn 11, 13, 15, 14 ; DVs
 	db 10, 25, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 148 ; HP
@@ -827,7 +889,9 @@ BattleTowerMons:
 	dn 15, 14, 13, 7 ; DVs
 	db 10, 15, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 98 ; HP
@@ -853,7 +917,9 @@ BattleTowerMons:
 	dn 15, 12, 15, 14 ; DVs
 	db 15, 20, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 58 ; HP
@@ -879,7 +945,9 @@ BattleTowerMons:
 	dn 15, 13, 15, 14 ; DVs
 	db 25, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 73 ; HP
@@ -905,7 +973,9 @@ BattleTowerMons:
 	dn 15, 11, 15, 13 ; DVs
 	db 15, 15, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 67 ; HP
@@ -931,7 +1001,9 @@ BattleTowerMons:
 	dn 15, 11, 14, 15 ; DVs
 	db 15, 10, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 76 ; HP
@@ -957,7 +1029,9 @@ BattleTowerMons:
 	dn 14, 13, 15, 7 ; DVs
 	db 15, 5, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 82 ; HP
@@ -983,7 +1057,9 @@ BattleTowerMons:
 	dn 13, 15, 15, 14 ; DVs
 	db 10, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 83 ; HP
@@ -1009,7 +1085,9 @@ BattleTowerMons:
 	dn 12, 7, 15, 14 ; DVs
 	db 5, 5, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 98 ; HP
@@ -1035,7 +1113,9 @@ BattleTowerMons:
 	dn 12, 7, 7, 7 ; DVs
 	db 10, 15, 10, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 97 ; HP
@@ -1061,7 +1141,9 @@ BattleTowerMons:
 	dn 5, 6, 4, 6 ; DVs
 	db 5, 10, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 74 ; HP
@@ -1087,7 +1169,9 @@ BattleTowerMons:
 	dn 5, 5, 4, 7 ; DVs
 	db 20, 10, 15, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
 	bigdw 81 ; HP
@@ -1116,7 +1200,9 @@ BattleTowerMons:
 	dn 13, 11, 14, 13 ; DVs
 	db 15, 20, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 103 ; HP
@@ -1142,7 +1228,9 @@ BattleTowerMons:
 	dn 13, 13, 15, 11 ; DVs
 	db 15, 15, 5, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 119 ; HP
@@ -1168,7 +1256,9 @@ BattleTowerMons:
 	dn 15, 15, 15, 15 ; DVs
 	db 20, 10, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 101 ; HP
@@ -1194,7 +1284,9 @@ BattleTowerMons:
 	dn 15, 11, 14, 14 ; DVs
 	db 5, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 102 ; HP
@@ -1220,7 +1312,9 @@ BattleTowerMons:
 	dn 14, 15, 15, 15 ; DVs
 	db 10, 10, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 81 ; HP
@@ -1246,7 +1340,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 11 ; DVs
 	db 5, 5, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 109 ; HP
@@ -1272,7 +1368,9 @@ BattleTowerMons:
 	dn 15, 11, 14, 13 ; DVs
 	db 10, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 217 ; HP
@@ -1298,7 +1396,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 15, 15, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 108 ; HP
@@ -1324,7 +1424,9 @@ BattleTowerMons:
 	dn 15, 13, 11, 14 ; DVs
 	db 5, 15, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 118 ; HP
@@ -1350,7 +1452,9 @@ BattleTowerMons:
 	dn 14, 15, 13, 12 ; DVs
 	db 15, 10, 10, 35 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 111 ; HP
@@ -1376,7 +1480,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 11 ; DVs
 	db 10, 20, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 117 ; HP
@@ -1402,7 +1508,9 @@ BattleTowerMons:
 	dn 13, 13, 14, 11 ; DVs
 	db 10, 20, 5, 10 ; PP
 	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 99 ; HP
@@ -1428,7 +1536,9 @@ BattleTowerMons:
 	dn 11, 13, 14, 15 ; DVs
 	db 30, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 98 ; HP
@@ -1454,7 +1564,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 11 ; DVs
 	db 5, 25, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 142 ; HP
@@ -1480,7 +1592,9 @@ BattleTowerMons:
 	dn 13, 13, 14, 11 ; DVs
 	db 5, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 139 ; HP
@@ -1506,7 +1620,9 @@ BattleTowerMons:
 	dn 14, 15, 15, 7 ; DVs
 	db 25, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 99 ; HP
@@ -1532,7 +1648,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 14 ; DVs
 	db 20, 10, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 110 ; HP
@@ -1558,7 +1676,9 @@ BattleTowerMons:
 	dn 15, 7, 15, 7 ; DVs
 	db 10, 30, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 101 ; HP
@@ -1584,7 +1704,9 @@ BattleTowerMons:
 	dn 7, 7, 4, 5 ; DVs
 	db 15, 10, 20, 30 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 114 ; HP
@@ -1610,7 +1732,9 @@ BattleTowerMons:
 	dn 6, 7, 7, 7 ; DVs
 	db 20, 20, 35, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 96 ; HP
@@ -1636,7 +1760,9 @@ BattleTowerMons:
 	dn 7, 7, 6, 7 ; DVs
 	db 20, 25, 15, 30 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 30 ; Level
 	db 0, 0 ; Status
 	bigdw 99 ; HP
@@ -1665,7 +1791,9 @@ BattleTowerMons:
 	dn 15, 13, 15, 14 ; DVs
 	db 20, 5, 10, 15 ; PP
 	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 143 ; HP
@@ -1691,7 +1819,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 15 ; DVs
 	db 15, 20, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 142 ; HP
@@ -1717,7 +1847,9 @@ BattleTowerMons:
 	dn 14, 13, 13, 13 ; DVs
 	db 15, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 205 ; HP
@@ -1743,7 +1875,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 11 ; DVs
 	db 15, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 186 ; HP
@@ -1769,7 +1903,9 @@ BattleTowerMons:
 	dn 14, 15, 13, 11 ; DVs
 	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 137 ; HP
@@ -1795,7 +1931,9 @@ BattleTowerMons:
 	dn 13, 13, 14, 15 ; DVs
 	db 10, 15, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 126 ; HP
@@ -1821,7 +1959,9 @@ BattleTowerMons:
 	dn 15, 13, 11, 14 ; DVs
 	db 5, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 131 ; HP
@@ -1847,7 +1987,9 @@ BattleTowerMons:
 	dn 11, 15, 14, 7 ; DVs
 	db 20, 20, 25, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 233 ; HP
@@ -1873,7 +2015,9 @@ BattleTowerMons:
 	dn 13, 13, 14, 13 ; DVs
 	db 5, 10, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 145 ; HP
@@ -1899,7 +2043,9 @@ BattleTowerMons:
 	dn 11, 13, 15, 14 ; DVs
 	db 20, 25, 20, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 139 ; HP
@@ -1925,7 +2071,9 @@ BattleTowerMons:
 	dn 15, 14, 11, 11 ; DVs
 	db 10, 5, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 108 ; HP
@@ -1951,7 +2099,9 @@ BattleTowerMons:
 	dn 11, 15, 12, 15 ; DVs
 	db 15, 10, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 157 ; HP
@@ -1977,7 +2127,9 @@ BattleTowerMons:
 	dn 11, 12, 14, 15 ; DVs
 	db 30, 30, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 147 ; HP
@@ -2003,7 +2155,9 @@ BattleTowerMons:
 	dn 15, 14, 11, 11 ; DVs
 	db 25, 30, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 152 ; HP
@@ -2029,7 +2183,9 @@ BattleTowerMons:
 	dn 15, 10, 7, 15 ; DVs
 	db 40, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 140 ; HP
@@ -2055,7 +2211,9 @@ BattleTowerMons:
 	dn 14, 15, 15, 7 ; DVs
 	db 10, 25, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 133 ; HP
@@ -2081,7 +2239,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 14 ; DVs
 	db 15, 10, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 142 ; HP
@@ -2107,7 +2267,9 @@ BattleTowerMons:
 	dn 15, 7, 14, 7 ; DVs
 	db 10, 20, 10, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 158 ; HP
@@ -2133,7 +2295,9 @@ BattleTowerMons:
 	dn 7, 7, 7, 10 ; DVs
 	db 25, 15, 15, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 146 ; HP
@@ -2159,7 +2323,9 @@ BattleTowerMons:
 	dn 7, 5, 6, 11 ; DVs
 	db 40, 10, 20, 30 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -2185,7 +2351,9 @@ BattleTowerMons:
 	dn 6, 5, 7, 7 ; DVs
 	db 30, 15, 20, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 40 ; Level
 	db 0, 0 ; Status
 	bigdw 124 ; HP
@@ -2214,7 +2382,9 @@ BattleTowerMons:
 	dn 13, 13, 15, 15 ; DVs
 	db 15, 5, 5, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 179 ; HP
@@ -2240,7 +2410,9 @@ BattleTowerMons:
 	dn 13, 13, 15, 12 ; DVs
 	db 10, 15, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 178 ; HP
@@ -2266,7 +2438,9 @@ BattleTowerMons:
 	dn 15, 13, 12, 15 ; DVs
 	db 10, 10, 10, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 123 ; HP
@@ -2292,7 +2466,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 15 ; DVs
 	db 5, 10, 15, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 263 ; HP
@@ -2318,7 +2494,9 @@ BattleTowerMons:
 	dn 13, 13, 13, 13 ; DVs
 	db 15, 15, 10, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 234 ; HP
@@ -2344,7 +2522,9 @@ BattleTowerMons:
 	dn 14, 13, 15, 15 ; DVs
 	db 15, 20, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -2370,7 +2550,9 @@ BattleTowerMons:
 	dn 13, 15, 14, 13 ; DVs
 	db 5, 20, 30, 35 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 169 ; HP
@@ -2396,7 +2578,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 14 ; DVs
 	db 10, 15, 10, 20 ; PP
 	db 15 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 196 ; HP
@@ -2422,7 +2606,9 @@ BattleTowerMons:
 	dn 15, 15, 14, 12 ; DVs
 	db 5, 10, 5, 15 ; PP
 	db 13 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 187 ; HP
@@ -2448,7 +2634,9 @@ BattleTowerMons:
 	dn 15, 15, 15, 15 ; DVs
 	db 20, 20, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -2474,7 +2662,9 @@ BattleTowerMons:
 	dn 15, 7, 15, 14 ; DVs
 	db 10, 20, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 135 ; HP
@@ -2500,7 +2690,9 @@ BattleTowerMons:
 	dn 7, 13, 15, 14 ; DVs
 	db 15, 5, 20, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -2526,7 +2718,9 @@ BattleTowerMons:
 	dn 15, 13, 13, 13 ; DVs
 	db 5, 10, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 181 ; HP
@@ -2552,7 +2746,9 @@ BattleTowerMons:
 	dn 14, 15, 15, 15 ; DVs
 	db 10, 15, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 178 ; HP
@@ -2578,7 +2774,9 @@ BattleTowerMons:
 	dn 15, 13, 13, 14 ; DVs
 	db 20, 15, 20, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 190 ; HP
@@ -2604,7 +2802,9 @@ BattleTowerMons:
 	dn 13, 7, 14, 13 ; DVs
 	db 10, 15, 25, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 164 ; HP
@@ -2630,7 +2830,9 @@ BattleTowerMons:
 	dn 12, 15, 13, 13 ; DVs
 	db 10, 10, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 169 ; HP
@@ -2656,7 +2858,9 @@ BattleTowerMons:
 	dn 13, 13, 13, 13 ; DVs
 	db 10, 15, 10, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 176 ; HP
@@ -2682,7 +2886,9 @@ BattleTowerMons:
 	dn 4, 5, 5, 6 ; DVs
 	db 15, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 161 ; HP
@@ -2708,7 +2914,9 @@ BattleTowerMons:
 	dn 7, 5, 6, 5 ; DVs
 	db 5, 15, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 193 ; HP
@@ -2734,7 +2942,9 @@ BattleTowerMons:
 	dn 4, 5, 5, 6 ; DVs
 	db 5, 5, 20, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
 	bigdw 181 ; HP
@@ -2763,7 +2973,9 @@ BattleTowerMons:
 	dn 13, 13, 15, 14 ; DVs
 	db 20, 15, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 211 ; HP
@@ -2789,7 +3001,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 15, 10, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 240 ; HP
@@ -2815,7 +3029,9 @@ BattleTowerMons:
 	dn 15, 11, 14, 15 ; DVs
 	db 15, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 212 ; HP
@@ -2841,7 +3057,9 @@ BattleTowerMons:
 	dn 13, 13, 13, 14 ; DVs
 	db 5, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 223 ; HP
@@ -2867,7 +3085,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 15 ; DVs
 	db 15, 5, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 226 ; HP
@@ -2893,7 +3113,9 @@ BattleTowerMons:
 	dn 13, 13, 15, 13 ; DVs
 	db 10, 20, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 229 ; HP
@@ -2919,7 +3141,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 20, 20, 5, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 346 ; HP
@@ -2945,7 +3169,9 @@ BattleTowerMons:
 	dn 15, 13, 13, 13 ; DVs
 	db 5, 20, 10, 25 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 215 ; HP
@@ -2971,7 +3197,9 @@ BattleTowerMons:
 	dn 13, 13, 15, 13 ; DVs
 	db 5, 15, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 229 ; HP
@@ -2997,7 +3225,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 15 ; DVs
 	db 10, 5, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 232 ; HP
@@ -3023,7 +3253,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 15, 15, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 228 ; HP
@@ -3049,7 +3281,9 @@ BattleTowerMons:
 	dn 15, 11, 14, 11 ; DVs
 	db 25, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 196 ; HP
@@ -3075,7 +3309,9 @@ BattleTowerMons:
 	dn 15, 11, 12, 13 ; DVs
 	db 10, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 424 ; HP
@@ -3101,7 +3337,9 @@ BattleTowerMons:
 	dn 15, 10, 15, 12 ; DVs
 	db 10, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 307 ; HP
@@ -3127,7 +3365,9 @@ BattleTowerMons:
 	dn 13, 15, 14, 13 ; DVs
 	db 15, 10, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 214 ; HP
@@ -3153,7 +3393,9 @@ BattleTowerMons:
 	dn 15, 15, 14, 11 ; DVs
 	db 5, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 196 ; HP
@@ -3179,7 +3421,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 14 ; DVs
 	db 15, 10, 40, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 209 ; HP
@@ -3205,7 +3449,9 @@ BattleTowerMons:
 	dn 15, 11, 15, 10 ; DVs
 	db 10, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 245 ; HP
@@ -3231,7 +3477,9 @@ BattleTowerMons:
 	dn 11, 7, 6, 7 ; DVs
 	db 10, 20, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 201 ; HP
@@ -3257,7 +3505,9 @@ BattleTowerMons:
 	dn 6, 6, 5, 15 ; DVs
 	db 15, 5, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 171 ; HP
@@ -3283,7 +3533,9 @@ BattleTowerMons:
 	dn 7, 6, 5, 7 ; DVs
 	db 5, 10, 15, 20 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
 	bigdw 205 ; HP
@@ -3312,7 +3564,9 @@ BattleTowerMons:
 	dn 15, 11, 14, 15 ; DVs
 	db 15, 5, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 231 ; HP
@@ -3338,7 +3592,9 @@ BattleTowerMons:
 	dn 11, 15, 14, 15 ; DVs
 	db 5, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 318 ; HP
@@ -3364,7 +3620,9 @@ BattleTowerMons:
 	dn 13, 13, 13, 13 ; DVs
 	db 20, 5, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 274 ; HP
@@ -3390,7 +3648,9 @@ BattleTowerMons:
 	dn 13, 15, 14, 13 ; DVs
 	db 20, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 495 ; HP
@@ -3416,7 +3676,9 @@ BattleTowerMons:
 	dn 13, 13, 13, 13 ; DVs
 	db 10, 10, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 365 ; HP
@@ -3442,7 +3704,9 @@ BattleTowerMons:
 	dn 13, 13, 12, 13 ; DVs
 	db 15, 15, 20, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 245 ; HP
@@ -3468,7 +3732,9 @@ BattleTowerMons:
 	dn 13, 11, 13, 15 ; DVs
 	db 10, 15, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 279 ; HP
@@ -3494,7 +3760,9 @@ BattleTowerMons:
 	dn 13, 11, 13, 15 ; DVs
 	db 15, 20, 20, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 264 ; HP
@@ -3520,7 +3788,9 @@ BattleTowerMons:
 	dn 13, 13, 14, 13 ; DVs
 	db 10, 5, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 268 ; HP
@@ -3546,7 +3816,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 11 ; DVs
 	db 5, 20, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 269 ; HP
@@ -3572,7 +3844,9 @@ BattleTowerMons:
 	dn 13, 11, 14, 15 ; DVs
 	db 15, 15, 5, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 271 ; HP
@@ -3598,7 +3872,9 @@ BattleTowerMons:
 	dn 13, 14, 13, 13 ; DVs
 	db 10, 15, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 266 ; HP
@@ -3624,7 +3900,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 20, 10, 5, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 262 ; HP
@@ -3650,7 +3928,9 @@ BattleTowerMons:
 	dn 11, 13, 15, 11 ; DVs
 	db 20, 15, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 195 ; HP
@@ -3676,7 +3956,9 @@ BattleTowerMons:
 	dn 11, 13, 14, 15 ; DVs
 	db 5, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 227 ; HP
@@ -3702,7 +3984,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 13 ; DVs
 	db 30, 40, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 231 ; HP
@@ -3728,7 +4012,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 14 ; DVs
 	db 15, 10, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 202 ; HP
@@ -3754,7 +4040,9 @@ BattleTowerMons:
 	dn 15, 7, 15, 7 ; DVs
 	db 15, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 251 ; HP
@@ -3780,7 +4068,9 @@ BattleTowerMons:
 	dn 7, 6, 4, 4 ; DVs
 	db 5, 10, 5, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 233 ; HP
@@ -3806,7 +4096,9 @@ BattleTowerMons:
 	dn 5, 6, 4, 4 ; DVs
 	db 20, 10, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 230 ; HP
@@ -3832,7 +4124,9 @@ BattleTowerMons:
 	dn 7, 6, 6, 4 ; DVs
 	db 5, 15, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
 	bigdw 231 ; HP
@@ -3861,7 +4155,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 11 ; DVs
 	db 20, 15, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 263 ; HP
@@ -3887,7 +4183,9 @@ BattleTowerMons:
 	dn 13, 11, 14, 13 ; DVs
 	db 10, 10, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 415 ; HP
@@ -3913,7 +4211,9 @@ BattleTowerMons:
 	dn 15, 13, 13, 11 ; DVs
 	db 10, 15, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 280 ; HP
@@ -3939,7 +4239,9 @@ BattleTowerMons:
 	dn 15, 13, 13, 14 ; DVs
 	db 10, 15, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 276 ; HP
@@ -3965,7 +4267,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 11 ; DVs
 	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 366 ; HP
@@ -3991,7 +4295,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 11 ; DVs
 	db 10, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 318 ; HP
@@ -4017,7 +4323,9 @@ BattleTowerMons:
 	dn 13, 14, 13, 13 ; DVs
 	db 15, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 247 ; HP
@@ -4043,7 +4351,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 5, 10, 10, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 273 ; HP
@@ -4069,7 +4379,9 @@ BattleTowerMons:
 	dn 15, 11, 14, 13 ; DVs
 	db 10, 15, 5, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 273 ; HP
@@ -4095,7 +4407,9 @@ BattleTowerMons:
 	dn 13, 13, 13, 13 ; DVs
 	db 20, 15, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 303 ; HP
@@ -4121,7 +4435,9 @@ BattleTowerMons:
 	dn 13, 15, 14, 13 ; DVs
 	db 10, 20, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 293 ; HP
@@ -4147,7 +4463,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 15 ; DVs
 	db 10, 5, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 264 ; HP
@@ -4173,7 +4491,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 12 ; DVs
 	db 15, 10, 5, 35 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 256 ; HP
@@ -4199,7 +4519,9 @@ BattleTowerMons:
 	dn 13, 13, 14, 15 ; DVs
 	db 25, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 258 ; HP
@@ -4225,7 +4547,9 @@ BattleTowerMons:
 	dn 13, 13, 15, 14 ; DVs
 	db 15, 5, 25, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 300 ; HP
@@ -4251,7 +4575,9 @@ BattleTowerMons:
 	dn 15, 15, 14, 13 ; DVs
 	db 5, 10, 10, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 282 ; HP
@@ -4277,7 +4603,9 @@ BattleTowerMons:
 	dn 15, 15, 14, 15 ; DVs
 	db 15, 5, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 250 ; HP
@@ -4303,7 +4631,9 @@ BattleTowerMons:
 	dn 15, 13, 13, 13 ; DVs
 	db 20, 10, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 214 ; HP
@@ -4329,7 +4659,9 @@ BattleTowerMons:
 	dn 6, 5, 6, 5 ; DVs
 	db 5, 10, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 260 ; HP
@@ -4355,7 +4687,9 @@ BattleTowerMons:
 	dn 7, 4, 6, 4 ; DVs
 	db 5, 25, 15, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 241 ; HP
@@ -4381,7 +4715,9 @@ BattleTowerMons:
 	dn 7, 6, 5, 7 ; DVs
 	db 20, 15, 5, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 80 ; Level
 	db 0, 0 ; Status
 	bigdw 286 ; HP
@@ -4410,7 +4746,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 20, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 349 ; HP
@@ -4436,7 +4774,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 5, 5, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 343 ; HP
@@ -4462,7 +4802,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 13 ; DVs
 	db 20, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 289 ; HP
@@ -4488,7 +4830,9 @@ BattleTowerMons:
 	dn 13, 11, 13, 15 ; DVs
 	db 5, 5, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 266 ; HP
@@ -4514,7 +4858,9 @@ BattleTowerMons:
 	dn 15, 13, 12, 15 ; DVs
 	db 35, 30, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 325 ; HP
@@ -4540,7 +4886,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 10, 10, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 325 ; HP
@@ -4566,7 +4914,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 14 ; DVs
 	db 20, 15, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 309 ; HP
@@ -4592,7 +4942,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 14 ; DVs
 	db 5, 15, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 354 ; HP
@@ -4618,7 +4970,9 @@ BattleTowerMons:
 	dn 11, 13, 14, 15 ; DVs
 	db 10, 15, 15, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 405 ; HP
@@ -4644,7 +4998,9 @@ BattleTowerMons:
 	dn 13, 13, 15, 14 ; DVs
 	db 10, 15, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 294 ; HP
@@ -4670,7 +5026,9 @@ BattleTowerMons:
 	dn 13, 13, 14, 13 ; DVs
 	db 5, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 337 ; HP
@@ -4696,7 +5054,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 13 ; DVs
 	db 5, 15, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 455 ; HP
@@ -4722,7 +5082,9 @@ BattleTowerMons:
 	dn 13, 15, 13, 14 ; DVs
 	db 5, 15, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 336 ; HP
@@ -4748,7 +5110,9 @@ BattleTowerMons:
 	dn 11, 13, 15, 14 ; DVs
 	db 10, 5, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 633 ; HP
@@ -4774,7 +5138,9 @@ BattleTowerMons:
 	dn 13, 11, 15, 14 ; DVs
 	db 15, 15, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 309 ; HP
@@ -4800,7 +5166,9 @@ BattleTowerMons:
 	dn 14, 15, 15, 7 ; DVs
 	db 10, 25, 10, 20 ; PP
 	db 255 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 279 ; HP
@@ -4826,7 +5194,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 14 ; DVs
 	db 10, 20, 10, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 203 ; HP
@@ -4852,7 +5222,9 @@ BattleTowerMons:
 	dn 15, 7, 15, 7 ; DVs
 	db 5, 15, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 293 ; HP
@@ -4878,7 +5250,9 @@ BattleTowerMons:
 	dn 4, 7, 5, 7 ; DVs
 	db 10, 10, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 322 ; HP
@@ -4904,7 +5278,9 @@ BattleTowerMons:
 	dn 6, 5, 7, 6 ; DVs
 	db 15, 5, 15, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 284 ; HP
@@ -4930,7 +5306,9 @@ BattleTowerMons:
 	dn 5, 4, 4, 4 ; DVs
 	db 10, 10, 15, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 90 ; Level
 	db 0, 0 ; Status
 	bigdw 342 ; HP
@@ -4959,7 +5337,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 13 ; DVs
 	db 15, 15, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 347 ; HP
@@ -4985,7 +5365,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 15 ; DVs
 	db 5, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 377 ; HP
@@ -5011,7 +5393,9 @@ BattleTowerMons:
 	dn 13, 15, 15, 14 ; DVs
 	db 15, 20, 10, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 349 ; HP
@@ -5037,7 +5421,9 @@ BattleTowerMons:
 	dn 15, 13, 15, 14 ; DVs
 	db 15, 20, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 323 ; HP
@@ -5063,7 +5449,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 15 ; DVs
 	db 5, 10, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 341 ; HP
@@ -5089,7 +5477,9 @@ BattleTowerMons:
 	dn 13, 13, 14, 15 ; DVs
 	db 15, 5, 15, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 374 ; HP
@@ -5115,7 +5505,9 @@ BattleTowerMons:
 	dn 15, 14, 13, 15 ; DVs
 	db 15, 10, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 343 ; HP
@@ -5141,7 +5533,9 @@ BattleTowerMons:
 	dn 15, 11, 14, 15 ; DVs
 	db 20, 15, 5, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 309 ; HP
@@ -5167,7 +5561,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 15 ; DVs
 	db 15, 10, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 404 ; HP
@@ -5193,7 +5589,9 @@ BattleTowerMons:
 	dn 15, 13, 13, 14 ; DVs
 	db 10, 5, 15, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 343 ; HP
@@ -5219,7 +5617,9 @@ BattleTowerMons:
 	dn 15, 13, 12, 15 ; DVs
 	db 20, 25, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 324 ; HP
@@ -5245,7 +5645,9 @@ BattleTowerMons:
 	dn 11, 13, 14, 15 ; DVs
 	db 5, 5, 20, 15 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 309 ; HP
@@ -5271,7 +5673,9 @@ BattleTowerMons:
 	dn 15, 13, 14, 15 ; DVs
 	db 20, 5, 15, 20 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 301 ; HP
@@ -5297,7 +5701,9 @@ BattleTowerMons:
 	dn 15, 11, 15, 14 ; DVs
 	db 25, 5, 20, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 333 ; HP
@@ -5323,7 +5729,9 @@ BattleTowerMons:
 	dn 13, 13, 15, 14 ; DVs
 	db 15, 5, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 703 ; HP
@@ -5349,7 +5757,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 7 ; DVs
 	db 10, 5, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 387 ; HP
@@ -5375,7 +5785,9 @@ BattleTowerMons:
 	dn 15, 14, 15, 14 ; DVs
 	db 10, 10, 5, 5 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 375 ; HP
@@ -5401,7 +5813,9 @@ BattleTowerMons:
 	dn 15, 11, 14, 7 ; DVs
 	db 15, 5, 5, 10 ; PP
 	db 100 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 331 ; HP
@@ -5427,7 +5841,9 @@ BattleTowerMons:
 	dn 7, 4, 4, 6 ; DVs
 	db 5, 10, 10, 5 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 329 ; HP
@@ -5453,7 +5869,9 @@ BattleTowerMons:
 	dn 6, 7, 7, 6 ; DVs
 	db 20, 15, 15, 15 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 265 ; HP
@@ -5479,7 +5897,9 @@ BattleTowerMons:
 	dn 7, 6, 5, 7 ; DVs
 	db 15, 5, 5, 10 ; PP
 	db 0 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
+	db 0 ; Pokerus
+	db NATURE_HARDY
+	db 0, 0 ; Caught data
 	db 100 ; Level
 	db 0, 0 ; Status
 	bigdw 425 ; HP
