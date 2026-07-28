@@ -258,6 +258,12 @@ INCLUDE "data/pokemon/names.asm"
 INCLUDE "data/pokemon/unused_pic_banks.asm"
 
 
+SECTION "Pokemon Characteristics", ROMX
+
+INCLUDE "engine/pokemon/characteristics.asm"
+INCLUDE "data/pokemon/characteristics.asm"
+
+
 SECTION "Crystal Phone Text", ROMX
 
 INCLUDE "data/phone/text/irwin_caller.asm"

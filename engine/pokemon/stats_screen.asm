@@ -902,93 +902,136 @@ LoadBluePage:
 	dw wBufferMonOT
 
 LoadOrangePage:
-	call .placeCaughtLocation
-	ld de, MetAtMapString
-	hlcoord 1, 9
+	; Met-data section
+	ld de, .MetDataString
+	hlcoord 1, 8
 	call PlaceString
-	call .placeCaughtLevel
+
+	call .PlaceCaughtLocation
+	call .PlaceCaughtLevel
+
+	; Characteristic section
+	ld de, .CharacteristicString
+	hlcoord 1, 13
+	call PlaceString
+
+	farcall GetTempMonCharacteristic
+
+	; First line
+	hlcoord 2, 14
+	call PlaceString
+	
+	; Move past the first line's @ terminator.
+	inc de
+
+	; de now points just after the first @, at the second line
+	hlcoord 2, 15
+	call PlaceString
 	ret
 
-.placeCaughtLocation
+
+.PlaceCaughtLocation:
 	ld a, [wTempMonCaughtLocation]
 	and CAUGHT_LOCATION_MASK
 	jr z, .unknown_location
+
 	cp LANDMARK_EVENT
 	jr z, .unknown_location
+
 	cp LANDMARK_GIFT
 	jr z, .unknown_location
+
 	ld e, a
 	farcall GetLandmarkName
+
 	ld de, wStringBuffer1
-	hlcoord 2, 10
+	hlcoord 2, 9
 	call PlaceString
+
+	; Display the time of day.
 	ld a, [wTempMonCaughtTime]
 	and CAUGHT_TIME_MASK
 	ret z ; no time
+
 	rlca
 	rlca
 	dec a
-	ld hl, .times
+
+	ld hl, .Times
 	call GetNthString
+
 	ld d, h
 	ld e, l
 	call CopyName1
+
 	ld de, wStringBuffer2
-	hlcoord 2, 11
+	hlcoord 2, 10
 	call PlaceString
 	ret
 
 .unknown_location:
-	ld de, MetUnknownMapString
-	hlcoord 2, 10
+	ld de, .UnknownMapString
+	hlcoord 2, 9
 	call PlaceString
 	ret
 
-.times
+
+.Times:
 	db "IN THE MORN@"
 	db "DURING THE DAY@"
 	db "IN THE EVE@"
 	db "AT NITE@"
 
-.placeCaughtLevel
-	; caught level
-	; Limited to between 1 and 63 since it's a 6-bit quantity.
+
+.PlaceCaughtLevel:
+	ld de, .MetAtLevelString
+	hlcoord 2, 11
+	call PlaceString
+
+	; Caught level is limited to 1–63 because it is a
+	; six-bit value.
 	ld a, [wTempMonCaughtLevel]
 	and CAUGHT_LEVEL_MASK
 	jr z, .unknown_level
-	cp CAUGHT_EGG_LEVEL ; egg marker value
+
+	cp CAUGHT_EGG_LEVEL
 	jr nz, .print
-	ld a, EGG_LEVEL ; egg hatch level
+	ld a, EGG_LEVEL
 
 .print
 	ld [wTextDecimalByte], a
-	hlcoord 3, 13
+
+	hlcoord 9, 11
+	ld [hl], CHARVAL("<LV>")
+	inc hl
+
 	ld de, wTextDecimalByte
 	lb bc, PRINTNUM_LEFTALIGN | 1, 3
 	call PrintNum
-	ld de, MetAtLevelString
-	hlcoord 1, 12
-	call PlaceString
-	hlcoord 2, 13
-	ld [hl], CHARVAL("<LV>")
 	ret
 
-.unknown_level
-	ld de, MetUnknownLevelString
-	hlcoord 2, 12
+.unknown_level:
+	ld de, .UnknownLevelString
+	hlcoord 9, 11
 	call PlaceString
 	ret
 
-MetAtMapString:
-	db "MET AT:@"
 
-MetUnknownMapString:
+.MetDataString:
+	db "MET DATA/@"
+
+.MetAtLevelString:
+	db "MET AT @"
+
+.UnknownMapString:
 	db "UNKNOWN@"
-	
-MetAtLevelString:
-	db "MET LEVEL:@"    
-MetUnknownLevelString:
+
+.UnknownLevelString:
 	db "???@"
+
+.CharacteristicString:
+	db "CHARACTERISTIC/@"
+
 
 
 IDNoString:
