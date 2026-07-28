@@ -53,7 +53,27 @@ GetNatureStatModifiers:
 
 	ret
 	
+; Get the raised and lowered stats for wTempMon's Nature.
+;
+; Output:
+;   wStringBuffer2     = raised stat
+;   wStringBuffer2 + 1 = lowered stat
+GetTempMonNatureStatModifiers:
+	ld a, [wTempMonNature]
 
+	cp NUM_NATURES
+	jr c, .valid
+	xor a ; invalid Nature falls back to Hardy
+
+.valid
+	call GetNatureStatModifiers
+
+	ld a, b
+	ld [wStringBuffer2], a
+
+	ld a, c
+	ld [wStringBuffer2 + 1], a
+	ret
 	
 
 ; Copy the current temp Pokémon's Nature name to wStringBuffer1.

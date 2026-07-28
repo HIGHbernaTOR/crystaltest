@@ -6,6 +6,10 @@
 DEF NUM_STAT_PAGES EQU 4 
 
 DEF STAT_PAGE_MASK EQU %00000011
+
+DEF STATS_SCREEN_NATURE_UP_ARROW_TILE   EQU $42
+DEF STATS_SCREEN_NATURE_DOWN_ARROW_TILE EQU $43
+
 	const_def 4
 	const STATS_SCREEN_PLACE_FRONTPIC ; 4
 	const STATS_SCREEN_ANIMATE_MON    ; 5
@@ -777,6 +781,72 @@ LoadBluePage:
 	hlcoord 11, 8
 	ld bc, 6
 	predef PrintTempMonStats
+	
+	call .PlaceNatureStatMarkers
+	ret
+	
+.PlaceNatureStatMarkers:
+	farcall GetTempMonNatureStatModifiers
+
+	; Raised stat
+	ld a, [wStringBuffer2]
+	ld b, STATS_SCREEN_NATURE_UP_ARROW_TILE ; custom up arrow
+	call .PlaceNatureStatMarker
+
+	; Lowered stat
+	ld a, [wStringBuffer2 + 1]
+	ld b, STATS_SCREEN_NATURE_DOWN_ARROW_TILE ; custom down arrow
+	call .PlaceNatureStatMarker
+	ret
+
+
+; Input:
+;   a = Nature stat ID
+;   b = character to display
+.PlaceNatureStatMarker:
+	cp NATURE_NEUTRAL
+	ret z
+
+	cp NATURE_STAT_ATK
+	jr z, .attack
+
+	cp NATURE_STAT_DEF
+	jr z, .defense
+
+	cp NATURE_STAT_SAT
+	jr z, .special_attack
+
+	cp NATURE_STAT_SDF
+	jr z, .special_defense
+
+	cp NATURE_STAT_SPD
+	jr z, .speed
+
+	ret
+
+
+.attack
+	hlcoord 16, 9
+	jr .place
+
+.defense
+	hlcoord 16, 11
+	jr .place
+
+.special_attack
+	hlcoord 16, 13
+	jr .place
+
+.special_defense
+	hlcoord 16, 15
+	jr .place
+
+.speed
+	hlcoord 16, 17
+
+.place
+	ld a, b
+	ld [hl], a
 	ret
 
 .PlaceOTInfo:

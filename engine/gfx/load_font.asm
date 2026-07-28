@@ -118,4 +118,31 @@ LoadStatsScreenPageTilesGFX:
 	ld hl, vTiles2 tile $31
 	lb bc, BANK(StatsScreenPageTilesGFX), 17
 	call Get2bppViaHDMA
+
+	; Nature stat arrows.
+	ld de, NatureStatArrowGFX
+	ld hl, vTiles2 tile $42
+	lb bc, BANK(NatureStatArrowGFX), 2
+	call Get1bppViaHDMA
 	ret
+	
+	NatureStatArrowGFX:
+	; Up arrow — tile $42
+	db %00000000
+	db %00011000
+	db %00111100
+	db %01111110
+	db %11111111
+	db %00011000
+	db %00011000
+	db %00000000
+
+	; Down arrow — tile $43
+	db %00000000
+	db %00011000
+	db %00011000
+	db %11111111
+	db %01111110
+	db %00111100
+	db %00011000
+	db %00000000
