@@ -886,14 +886,6 @@ LoadBluePage:
 	ld de, .NatureString
 	hlcoord 0, 15
 	call PlaceString
-	
-; DEBUG: display the raw Nature value
-	ld a, [wTempMonNature]
-	ld [wTextDecimalByte], a
-	hlcoord 7, 15
-	ld de, wTextDecimalByte
-	lb bc, 1, 3
-	call PrintNum
 
 	farcall GetNatureName
 	hlcoord 2, 16

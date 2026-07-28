@@ -3874,14 +3874,16 @@ InitBattleMon:
 	ld de, wBattleMonSpecies
 	ld bc, MON_OT_ID
 	call CopyBytes
+
 	ld bc, MON_DVS - MON_OT_ID
 	add hl, bc
 	ld de, wBattleMonDVs
 	ld bc, MON_POKERUS - MON_DVS
 	call CopyBytes
-	inc hl
-	inc hl
-	inc hl
+
+	; Skip fields not present in the battle-mon struct.
+	ld bc, MON_LEVEL - MON_POKERUS
+	add hl, bc
 	ld de, wBattleMonLevel
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_LEVEL
 	call CopyBytes
@@ -3965,9 +3967,14 @@ InitEnemyMon:
 	ld de, wEnemyMonDVs
 	ld bc, MON_POKERUS - MON_DVS
 	call CopyBytes
-	inc hl
-	inc hl
-	inc hl
+
+	; Skip fields not present in the enemy battle-mon struct.
+	ld bc, MON_LEVEL - MON_POKERUS
+	add hl, bc
+
+	ld de, wEnemyMonLevel
+	ld bc, PARTYMON_STRUCT_LENGTH - MON_LEVEL
+	call CopyBytes
 	ld de, wEnemyMonLevel
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_LEVEL
 	call CopyBytes
@@ -5121,13 +5128,16 @@ BattleMenuPKMN_Loop:
 Battle_StatsScreen:
 	call DisableLCD
 
+	; Back up stats-screen page tiles plus Nature arrows:
+	; vTiles2 $31-$43 -> vTiles0 $00-$12
 	ld hl, vTiles2 tile $31
 	ld de, vTiles0
-	ld bc, $11 tiles
+	ld bc, $13 tiles
 	call CopyBytes
 
+	; Back up vTiles2 $00-$30 -> vTiles0 $13-$43
 	ld hl, vTiles2
-	ld de, vTiles0 tile $11
+	ld de, vTiles0 tile $13
 	ld bc, $31 tiles
 	call CopyBytes
 
@@ -5142,12 +5152,14 @@ Battle_StatsScreen:
 
 	call DisableLCD
 
+	; Restore vTiles2 $31-$43.
 	ld hl, vTiles0
 	ld de, vTiles2 tile $31
-	ld bc, $11 tiles
+	ld bc, $13 tiles
 	call CopyBytes
 
-	ld hl, vTiles0 tile $11
+	; Restore vTiles2 $00-$30.
+	ld hl, vTiles0 tile $13
 	ld de, vTiles2
 	ld bc, $31 tiles
 	call CopyBytes

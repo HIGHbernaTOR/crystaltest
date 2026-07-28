@@ -98,3 +98,29 @@ GetNatureName:
 
 	ld de, wStringBuffer1
 	ret
+	
+	
+; Look up the Nature stored in wStringBuffer1.
+;
+; Input:
+;   wStringBuffer1 = Nature ID
+;
+; Output:
+;   wStringBuffer2     = raised stat
+;   wStringBuffer2 + 1 = lowered stat
+GetNatureModifiersFromBuffer:
+	ld a, [wStringBuffer1]
+
+	cp NUM_NATURES
+	jr c, .valid
+	xor a ; invalid Nature falls back to Hardy
+
+.valid
+	call GetNatureStatModifiers
+
+	ld a, b
+	ld [wStringBuffer2], a
+
+	ld a, c
+	ld [wStringBuffer2 + 1], a
+	ret

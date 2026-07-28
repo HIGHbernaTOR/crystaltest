@@ -1438,22 +1438,146 @@ CalcMonStats:
 ; Calculates all 6 Stats of a mon
 ; b: Take into account stat EXP if TRUE
 ; 'c' counts from 1-6 and points with 'wBaseStats' to the base value
-; hl is the path to the Stat EXP
+; hl points to MON_STAT_EXP - 1
 ; de points to where the final stats will be saved
 
+	; Read the Nature from the same Pokémon struct.
+	push hl
+	push de
+	push bc
+
+	ld bc, -(MON_STAT_EXP - 1)
+	add hl, bc
+	ld bc, MON_NATURE
+	add hl, bc
+	ld a, [hl]
+	ld [wStringBuffer1], a
+
+	farcall GetNatureModifiersFromBuffer
+
+	pop bc
+	pop de
+	pop hl
 	ld c, STAT_HP - 1 ; first stat
 .loop
 	inc c
 	call CalcMonStatC
+
+	; ApplyNatureToCalculatedStat uses d as a temporary value,
+	; so preserve the stat destination pointer in de.
+	push de
+	call ApplyNatureToCalculatedStat
+	pop de
+
 	ldh a, [hMultiplicand + 1]
 	ld [de], a
 	inc de
 	ldh a, [hMultiplicand + 2]
 	ld [de], a
 	inc de
+
 	ld a, c
 	cp STAT_SDEF ; last stat
 	jr nz, .loop
+	ret
+	
+ApplyNatureToCalculatedStat:
+; Apply the Pokémon's Nature to the completed stat in hMultiplicand.
+;
+; Input:
+;   c = STAT_HP through STAT_SDEF
+;   hMultiplicand + 1/+2 = calculated 16-bit stat
+;
+; Output:
+;   hMultiplicand + 1/+2 = Nature-adjusted stat
+
+	; Natures never affect HP.
+	ld a, c
+	cp STAT_HP
+	ret z
+
+	; Convert CalcMonStats stat IDs to Nature stat IDs.
+	cp STAT_ATK
+	jr z, .attack
+	cp STAT_DEF
+	jr z, .defense
+	cp STAT_SPD
+	jr z, .speed
+	cp STAT_SATK
+	jr z, .special_attack
+	cp STAT_SDEF
+	jr z, .special_defense
+	ret
+
+.attack
+	ld a, NATURE_STAT_ATK
+	jr .compare
+
+.defense
+	ld a, NATURE_STAT_DEF
+	jr .compare
+
+.speed
+	ld a, NATURE_STAT_SPD
+	jr .compare
+
+.special_attack
+	ld a, NATURE_STAT_SAT
+	jr .compare
+
+.special_defense
+	ld a, NATURE_STAT_SDF
+
+.compare
+	ld d, a
+
+	; Is this the raised stat?
+	ld a, [wStringBuffer2]
+	cp d
+	jr z, .boost
+
+	; Is this the lowered stat?
+	ld a, [wStringBuffer2 + 1]
+	cp d
+	jr z, .reduce
+
+	ret
+
+.boost
+	ld a, 110
+	jr .multiply
+
+.reduce
+	ld a, 90
+
+.multiply
+	; Preserve the current stat ID.
+	push bc
+
+	; Multiply the completed 16-bit stat by 110 or 90.
+	ldh [hMultiplier], a
+	call Multiply
+
+	; Divide the product by 100.
+	ldh a, [hProduct + 1]
+	ldh [hDividend], a
+	ldh a, [hProduct + 2]
+	ldh [hDividend + 1], a
+	ldh a, [hProduct + 3]
+	ldh [hDividend + 2], a
+
+	ld a, 100
+	ldh [hDivisor], a
+	ld b, 3
+	call Divide
+
+	; Copy the floored result back.
+	ldh a, [hQuotient + 2]
+	ldh [hMultiplicand + 1], a
+	ldh a, [hQuotient + 3]
+	ldh [hMultiplicand + 2], a
+
+	pop bc
 	ret
 
 CalcMonStatC:
