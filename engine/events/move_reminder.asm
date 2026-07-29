@@ -48,13 +48,21 @@ MoveReminder:
 
 ; This is where the move menu loop begins.
 
-; Generates the Move Reminder's menu. Relative jump to the
-; ".loop_party_menu" local jump if the player leaves
-; the menu and continue if they do not.
+; Generates the Move Reminder's move-selection menu.
+; If the player cancels, return to the map textbox and
+; ask whether they want to choose another Pokémon.
 .loop_move_menu
 	call ChooseMoveToLearn
-	jr c, .loop_party_menu
+	jr nc, .move_selected
 
+	call ReturnToMapWithSpeechTextbox
+	ld hl, MoveReminderChooseAnotherText
+	call PrintText
+	call YesNoBox
+	jr nc, .loop_party_menu
+	jr .cancel
+
+.move_selected
 	; If the player selects a move, load the move's name and copy
 	; it for later. This is used for displaying the move's
 	; name in some of the text boxes while learning a move.
@@ -91,34 +99,45 @@ MoveReminder:
 ; This ends the dialogue.
 .cancel
 	ld hl, MoveReminderCancelText
-	jp PrintText
+	call PrintText
+	ld c, 15
+	call DelayFrames
+	ret
 
-; Loads and prints the "MoveReminderEggText" text.
-; This ends the dialogue.
+; Loads and prints the "MoveReminderEggText" text,
+; then returns to the party-selection menu.
 .is_an_egg
 	ld hl, MoveReminderEggText
-	jp PrintText
+	call PrintText
+	jr .loop_party_menu
 
-; Loads and prints the "MoveReminderNotaMonText" text.
-; This ends the dialogue.
+; Loads and prints the "MoveReminderNotaMonText" text,
+; then returns to the party-selection menu.
 .not_a_pokemon
 	ld hl, MoveReminderNotaMonText
-	jp PrintText
+	call PrintText
+	jr .loop_party_menu
 
-; Loads and prints the "MoveReminderNoMovesText" text.
-; This ends the dialogue.
+; Loads and prints the "MoveReminderNoMovesText" text,
+; then returns to the party-selection menu.
 .no_moves_to_learn
 	ld hl, MoveReminderNoMovesText
-	jp PrintText
+	call PrintText
+	jr .loop_party_menu
 
-; Exits the menu and goes back to the map with a
-; speech text box open and then loads and prints
-; the "MoveReminderMoveLearnedText" text.
-; This ends the dialogue.
+; Returns to the map with a speech textbox open,
+; prints the successful move-reminder message,
+; and asks whether another move should be recalled.
+;
+; YES returns to the party menu.
+; NO proceeds to the cancellation message.
 .move_learned
 	call ReturnToMapWithSpeechTextbox
 	ld hl, MoveReminderMoveLearnedText
-	jp PrintText
+	call PrintText
+	call YesNoBox
+	jp nc, .loop_party_menu
+	jr .cancel
 
 ; Checks for moves that can be learned and returns
 ; a zero flag if there are none.
@@ -676,8 +695,7 @@ MoveReminderIntroText:
 	cont "recall moves they"
 	cont "have forgotten!"
 
-	para "Are you"
-	line "interested?"
+	para "Begin?"
 	done
 
 ; This is the text that displays just
@@ -690,7 +708,7 @@ MoveReminderWhichMonText:
 ; a Pokémon has been selected.
 MoveReminderWhichMoveText:
 	text "Which move should"
-	line "it remember, then?"
+	line "it remember?"
 	prompt
 
 ; This is the text that displays just before
@@ -700,8 +718,6 @@ MoveReminderCancelText:
 	text "Thank you for"
 	line "using the"
 	cont "Move Reminder!"
-	
-	para "Access whose PC?"
 	done
 
 ; This is the text that displays if the player
@@ -718,7 +734,7 @@ MoveReminderNotaMonText:
 	text "What is that!?"
 
 	para "I'm sorry, but"
-	line "only #mon can"
+	line "only #MON can"
 	cont "recall moves!"
 	prompt
 
@@ -726,17 +742,27 @@ MoveReminderNotaMonText:
 ; selects a Pokémon in the party menu that
 ; has no moves that can be learned.
 MoveReminderNoMovesText:
-	text "This #mon has"
+	text "This #MON has"
 	line "not forgotten any"
 	cont "moves."
 	prompt
+	
+; This text asks whether the player wants
+; to choose another Pokémon after cancelling
+; the move-selection menu.
+MoveReminderChooseAnotherText:
+	text "Choose another"
+	line "#MON?"
+	done
 
-; This is the text that displays after a
-; Pokémon successfully learns a move.
+; This text displays after a Pokémon successfully
+; recalls a move and asks whether the player wants
+; to recall another move.
 MoveReminderMoveLearnedText:
 	text "Done! Your #MON"
 	line "has remembered"
 	cont "the move."
-	
-	para "Access whose PC?"
+
+	para "Recall another"
+	line "move?"
 	done

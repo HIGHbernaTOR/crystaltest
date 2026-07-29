@@ -36,7 +36,11 @@ PokemonCenterPC:
 	ld a, [wMenuSelection]
 	ld hl, .Jumptable
 	call MenuJumptable
-	jr nc, .loop
+	jr c, .shutdown
+
+	ld hl, PokecenterPCWhoseText
+	call PrintText
+	jr .loop
 
 .shutdown
 	call PC_PlayShutdownSound
