@@ -13,6 +13,8 @@
 	const PCPCITEM_MOVE_REMINDER ; 3
 	const PCPCITEM_HALL_OF_FAME  ; 4
 	const PCPCITEM_TURN_OFF      ; 5
+	const PCPCITEM_LOG_OFF		 ; 6
+	const PCPCITEM_SIGN_OUT      ; 7
 
 PokemonCenterPC:
 	call PC_CheckPartyForPokemon
@@ -63,53 +65,61 @@ PokemonCenterPC:
 	dw MoveReminderPC, .String_MoveReminder
 	dw HallOfFamePC,   .String_HallOfFame
 	dw TurnOffPC,      .String_TurnOff
+	dw TurnOffPC,      .String_LogOff
+	dw TurnOffPC,      .String_SignOut
 
 .String_PlayersPC:     db "<PLAYER>'s PC@"
 .String_BillsPC:       db "BILL's PC@"
 .String_OaksPC:        db "PROF.OAK's PC@"
-.String_MoveReminder   db "MOVE REMINDER@"
+.String_MoveReminder:   db "MOVE REMINDER@"
 .String_HallOfFame:    db "HALL OF FAME@"
 .String_TurnOff:       db "TURN OFF@"
+.String_LogOff:       db "LOG OFF@"
+.String_SignOut:       db "SIGN OUT@"
+
 
 .WhichPC:
 ; entries correspond to PCPC_* constants
 
 	; PCPC_BEFORE_POKEDEX
+	db 3
+	db PCPCITEM_BILLS_PC
+	db PCPCITEM_PLAYERS_PC
+	db PCPCITEM_SIGN_OUT
+	db -1 ; end
+
+	; PCPC_BEFORE_HOF
+	db 4
+	db PCPCITEM_BILLS_PC
+	db PCPCITEM_PLAYERS_PC
+	db PCPCITEM_OAKS_PC
+	db PCPCITEM_SIGN_OUT
+	db -1 ; end
+
+	; PCPC_POSTGAME
+	db 5
+	db PCPCITEM_BILLS_PC
+	db PCPCITEM_PLAYERS_PC
+	db PCPCITEM_OAKS_PC
+	db PCPCITEM_HALL_OF_FAME
+	db PCPCITEM_SIGN_OUT
+	db -1 ; end
+	
+	; PCPC_LAPTOP
 	db 4
 	db PCPCITEM_BILLS_PC
 	db PCPCITEM_PLAYERS_PC
 	db PCPCITEM_MOVE_REMINDER
-	db PCPCITEM_TURN_OFF
-	db -1 ; end
-
-	; PCPC_BEFORE_HOF
-	db 5
-	db PCPCITEM_BILLS_PC
-	db PCPCITEM_PLAYERS_PC
-	db PCPCITEM_OAKS_PC
-	db PCPCITEM_MOVE_REMINDER
-	db PCPCITEM_TURN_OFF
-	db -1 ; end
-
-	; PCPC_POSTGAME
-	db 6
-	db PCPCITEM_BILLS_PC
-	db PCPCITEM_PLAYERS_PC
-	db PCPCITEM_OAKS_PC
-	db PCPCITEM_MOVE_REMINDER
-	db PCPCITEM_HALL_OF_FAME
-	db PCPCITEM_TURN_OFF
-	db -1 ; end
-	
-	; PCPC_LAPTOP
-	db 5
-	db PCPCITEM_BILLS_PC
-	db PCPCITEM_PLAYERS_PC
-	db PCPCITEM_MOVE_REMINDER
-	db PCPCITEM_TURN_OFF
+	db PCPCITEM_LOG_OFF
 	db -1 ; end
 
 .ChooseWhichPCListToUse:
+	; The Laptop always uses its own PC option list.
+	ld a, [wUsingLaptopPC]
+	and a
+	ld a, PCPC_LAPTOP
+	ret nz
+
 	call CheckReceivedDex
 	jr nz, .got_dex
 	ld a, PCPC_BEFORE_POKEDEX
@@ -120,6 +130,7 @@ PokemonCenterPC:
 	and a
 	ld a, PCPC_BEFORE_HOF
 	ret z
+
 	ld a, PCPC_POSTGAME
 	ret
 

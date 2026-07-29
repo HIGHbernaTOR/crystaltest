@@ -1622,7 +1622,7 @@ LaptopFunction:
 	and $7f
 	ld [wFieldMoveSucceeded], a
 	ret
-	
+
 .LoadLaptop:
 	ld a, [wPlayerState]
 	ld hl, Script_LoadLaptop
@@ -1631,13 +1631,24 @@ LaptopFunction:
 	call QueueScript
 	ld a, TRUE
 	ret
-	
+
 .CheckIfRegistered:
 	ld a, [wUsingItemWithSelect]
 	and a
 	ret z
 	ld h, d
 	ld l, e
+	ret
+
+
+SetUsingLaptopPC:
+	ld a, TRUE
+	ld [wUsingLaptopPC], a
+	ret
+
+ClearUsingLaptopPC:
+	xor a
+	ld [wUsingLaptopPC], a
 	ret
 
 BikeFunction:
@@ -1729,9 +1740,15 @@ BikeFunction:
 Script_LoadLaptop:
 	reloadmappart
 	special UpdateTimePals
+
 Script_LoadLaptop_Register:
 	opentext
+
+	; Tell PokemonCenterPC to use the Laptop-specific menu.
+	callasm SetUsingLaptopPC
 	special PokemonCenterPC
+	callasm ClearUsingLaptopPC
+
 	closetext
 	reloadmappart
 	end
