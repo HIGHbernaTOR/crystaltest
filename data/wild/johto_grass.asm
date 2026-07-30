@@ -1183,7 +1183,7 @@ JohtoGrassWildMons:
 	; morn
 	db 3, GEODUDE
 	db 2, ZUBAT
-	db 2, GEODUDE
+	db 2, LARVITAR
 	db 4, GEODUDE
 	db 2, TEDDIURSA
 	db 4, ZUBAT
