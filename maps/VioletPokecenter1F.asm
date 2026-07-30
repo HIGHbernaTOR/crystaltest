@@ -28,6 +28,14 @@ VioletPokecenter1F_ElmsAideScript:
 	getstring STRING_BUFFER_4, .eggname
 	scall .AideGivesEgg
 	setevent EVENT_GOT_TOGEPI_EGG_FROM_ELMS_AIDE
+	
+	; LAPTOP ITEM EVENT 
+	writetext VioletPokecenterElmsAideLaptopText
+	promptbutton
+	verbosegiveitem LAPTOP
+	writetext VioletPokecenterElmsAideLaptopInfoText
+	promptbutton
+	
 	clearevent EVENT_ELMS_AIDE_IN_LAB
 	clearevent EVENT_TOGEPI_HATCHED
 	setmapscene ROUTE_32, SCENE_ROUTE32_OFFER_SLOWPOKETAIL
@@ -135,6 +143,11 @@ VioletPokecenterElmsAideGiveEggText:
 	para "Please call PROF."
 	line "ELM when that EGG"
 	cont "hatches!"
+	
+	para "Well, I'd better"
+	line "get going."
+
+	para "Take care!"
 	done
 
 VioletCityElmsAideFullPartyText:
@@ -155,6 +168,29 @@ VioletPokecenterElmsAideRefuseText:
 VioletPokecenterElmsAideAskEggText:
 	text "<PLAY_G>, will you"
 	line "take the EGG?"
+	done
+	
+VioletPokecenterElmsAideLaptopText:
+	text "Oh, that's great!"
+	line "Since you'll be"
+	cont "helping us with"
+	
+	para "our research,"
+	line "I'll lend you"
+	cont "this, too."
+	done
+
+VioletPokecenterElmsAideLaptopInfoText:
+	text "It's my old"
+	line "LAPTOP."
+
+	para "You can use it"
+	line "to manage your"
+	cont "party."
+
+	para "It also has some"
+	line "useful programs"
+	cont "for your journey."
 	done
 
 VioletPokecenterFarawayLinkText: ; unreferenced

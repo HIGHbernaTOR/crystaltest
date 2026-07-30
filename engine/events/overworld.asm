@@ -1778,9 +1778,8 @@ Script_LaptopNoService:
 	end
 	
 LaptopNoServiceText:
-	text "... ... ..."
-	line "The LAPTOP can't"
-	cont "connect from here."
+	text "The LAPTOP can't"
+	line "connect from here."
 	done
 	
 ; new code place... come back here if you get into trouble.
