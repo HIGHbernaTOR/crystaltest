@@ -1440,8 +1440,8 @@ _MoveKnowsOneText::
 	done
 
 _AskDeleteMoveText::
-	text "Oh, make it forget"
-	line "@"
+	text "Make this #MON"
+	line "forget @"
 	text_ram wStringBuffer1
 	text "?"
 	done
@@ -1449,6 +1449,14 @@ _AskDeleteMoveText::
 _DeleterForgotMoveText::
 	text "Done! Your #MON"
 	line "forgot the move."
+	
+	para "Forget another"
+	line "move?"
+	done
+
+_DeleterChooseAnotherMonText::
+	text "Choose another"
+	line "#MON?"
 	done
 
 _DeleterEggText::
@@ -1457,8 +1465,9 @@ _DeleterEggText::
 	done
 
 _DeleterNoComeAgainText::
-	text "No? Come visit me"
-	line "again."
+	text "Thank you for"
+	line "using the"
+	cont "Move Deleter!"
 	done
 
 _DeleterAskWhichMoveText::
@@ -1467,14 +1476,14 @@ _DeleterAskWhichMoveText::
 	prompt
 
 _DeleterIntroText::
-	text "Um… Oh, yes, I'm"
-	line "the MOVE DELETER."
+	text "Accessing the"
+	line "Move Deleter!"
 
-	para "I can make #MON"
-	line "forget moves."
+	para "This program can"
+	line "help #MON"
+	cont "forget moves!"
 
-	para "Shall I make a"
-	line "#MON forget?"
+	para "Begin?"
 	done
 
 _DeleterAskWhichMonText::

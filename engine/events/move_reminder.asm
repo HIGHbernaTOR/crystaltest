@@ -310,9 +310,14 @@ ChooseMoveToLearn:
 	; This creates a border around the move list.
 	; "hlcoord" configures the position.
 	; "lb bc" configures the size.
-	hlcoord 0,  0
+	hlcoord 0,  1
 	lb bc, 9, 18
 	call TextboxBorder
+	
+	; Clear space in the border for the Pokémon icon.
+	hlcoord 2, 0
+	lb bc, 2, 3
+	call ClearBox
 
 	; This replaces the tile using the identifier
 	; of "$6e" with the fourteenth tile of the
@@ -329,6 +334,20 @@ ChooseMoveToLearn:
 	; appears before the Pokémon's level. Without
 	; it, an incorrect symbol will appear.
 	farcall LoadStatsScreenPageTilesGFX
+	
+	; BlankScreen disabled sprite updates.
+	call EnableSpriteUpdates
+	
+	; Prepare the sprite system for the Pokémon icon.
+	call ClearSprites
+	farcall ClearSpriteAnims2
+
+	ld a, [wCurPartySpecies]
+	ld [wTempIconSpecies], a
+	ld e, MONICON_MOVES
+	farcall LoadMenuMonIcon
+
+	
 
 	; This displays the Pokémon's species
 	; name (not nickname) at the
@@ -340,7 +359,7 @@ ChooseMoveToLearn:
 	ld a, [wCurPartySpecies]
 	ld [wNamedObjectIndex], a
 	call GetPokemonName
-	hlcoord  5, 0
+	hlcoord  5, 1
 	call PlaceString
 
 	; This displays the Pokémon's level
@@ -353,10 +372,36 @@ ChooseMoveToLearn:
 	; Creates the menu, sets the "B_BUTTON"
 	; to cancel and sets up each entry
 	; to behave like a tm/hm.
-	call ScrollingMenu
+	; Initialize the scrolling menu.
+	call CopyMenuData
+	farcall _InitScrollingMenu
+
+	; _InitScrollingMenu initializes w2DMenuFlags1,
+	; so enable sprite animations afterward.
+	ld hl, w2DMenuFlags1
+	set _2DMENU_ENABLE_SPRITE_ANIMS_F, [hl]
+
+	; Restore the menu palettes.
+	call SetDefaultBGPAndOBP
+
+	; Run the scrolling menu.
+	farcall _ScrollingMenu
+
+	; Pressing B cancels from any highlighted entry.
 	ld a, [wMenuJoypad]
-	cp B_BUTTON
+	bit B_PAD_B, a
+	jr nz, .carry
+
+	; Selecting the CANCEL entry with A also cancels.
+	ld a, [wMenuSelection]
+	cp -1
 	jr z, .carry
+
+	; A move was selected.
+	ld [wPutativeTMHMMove], a
+	and a
+	ret
+
 	ld a, [wMenuSelection]
 	ld [wPutativeTMHMMove], a
 	and a
@@ -374,8 +419,8 @@ ChooseMoveToLearn:
 ; of "menu_coords" will determine where the
 ; vertical scroll arrows will be located.
 .MenuHeader:
-	db MENU_BACKUP_TILES
-	menu_coords 1, 1, SCREEN_WIDTH - 2, 9
+	db MENU_BACKUP_TILES | MENU_SPRITE_ANIMS
+	menu_coords 1, 2, SCREEN_WIDTH - 2, 10
 	dw .MenuData
 	db 1
 

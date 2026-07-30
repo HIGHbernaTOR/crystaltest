@@ -2,14 +2,19 @@ MoveDeletion:
 	ld hl, .DeleterIntroText
 	call PrintText
 	call YesNoBox
-	jr c, .declined
+	jp c, .declined
+
 	ld hl, .DeleterAskWhichMonText
 	call PrintText
+
+.loop_party_menu
 	farcall SelectMonFromParty
-	jr c, .declined
+	jp c, .declined
+
 	ld a, [wCurPartySpecies]
 	cp EGG
 	jr z, .egg
+	
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Moves + 1
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -17,14 +22,20 @@ MoveDeletion:
 	ld a, [hl]
 	and a
 	jr z, .onlyonemove
+	
+.loop_move_menu
 	ld hl, .DeleterAskWhichMoveText
 	call PrintText
 	call LoadStandardMenuHeader
+	farcall FadeOutToWhite
+	farcall BlankScreen
 	farcall ChooseMoveToDelete
 	push af
+	call ExitMenu
 	call ReturnToMapWithSpeechTextbox
 	pop af
-	jr c, .declined
+	jr c, .choose_another_mon
+
 	ld a, [wMenuCursorY]
 	push af
 	ld a, [wCurSpecies]
@@ -34,30 +45,42 @@ MoveDeletion:
 	call PrintText
 	call YesNoBox
 	pop bc
-	jr c, .declined
+	jr c, .loop_move_menu
+
 	call .DeleteMove
-	call WaitSFX
 	ld de, SFX_MOVE_DELETED
 	call PlaySFX
 	call WaitSFX
 	ld hl, .DeleterForgotMoveText
 	call PrintText
+	call YesNoBox
+	jp nc, .loop_party_menu
+	jr .declined
+
+.choose_another_mon
+	ld hl, .DeleterChooseAnotherMonText
+	call PrintText
+	call YesNoBox
+	jp nc, .loop_party_menu
+	jr .declined
 	ret
 
 .egg
 	ld hl, .MailEggText
 	call PrintText
-	ret
+	jp .loop_party_menu
 
 .declined
 	ld hl, .DeleterNoComeAgainText
 	call PrintText
+	ld c, 15
+	call DelayFrames
 	ret
 
 .onlyonemove
 	ld hl, .MoveKnowsOneText
 	call PrintText
-	ret
+	jp .loop_party_menu
 
 .MoveKnowsOneText:
 	text_far _MoveKnowsOneText
@@ -73,6 +96,10 @@ MoveDeletion:
 
 .MailEggText:
 	text_far _DeleterEggText
+	text_end
+	
+.DeleterChooseAnotherMonText:
+	text_far _DeleterChooseAnotherMonText
 	text_end
 
 .DeleterNoComeAgainText:

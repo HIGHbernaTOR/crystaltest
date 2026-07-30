@@ -11,10 +11,11 @@
 	const PCPCITEM_BILLS_PC      ; 1
 	const PCPCITEM_OAKS_PC       ; 2
 	const PCPCITEM_MOVE_REMINDER ; 3
-	const PCPCITEM_HALL_OF_FAME  ; 4
-	const PCPCITEM_TURN_OFF      ; 5
-	const PCPCITEM_LOG_OFF		 ; 6
-	const PCPCITEM_SIGN_OUT      ; 7
+	const PCPCITEM_MOVE_DELETER  ; 4
+	const PCPCITEM_HALL_OF_FAME  ; 5
+	const PCPCITEM_TURN_OFF      ; 6
+	const PCPCITEM_LOG_OFF		 ; 7
+	const PCPCITEM_SIGN_OUT      ; 8
 
 PokemonCenterPC:
 	call PC_CheckPartyForPokemon
@@ -67,6 +68,7 @@ PokemonCenterPC:
 	dw BillsPC,        .String_BillsPC
 	dw OaksPC,         .String_OaksPC
 	dw MoveReminderPC, .String_MoveReminder
+	dw MoveDeleterPC,  .String_MoveDeleter
 	dw HallOfFamePC,   .String_HallOfFame
 	dw TurnOffPC,      .String_TurnOff
 	dw TurnOffPC,      .String_LogOff
@@ -76,6 +78,7 @@ PokemonCenterPC:
 .String_BillsPC:       db "BILL's PC@"
 .String_OaksPC:        db "PROF.OAK's PC@"
 .String_MoveReminder:   db "MOVE REMINDER@"
+.String_MoveDeleter:    db "MOVE DELETER@"
 .String_HallOfFame:    db "HALL OF FAME@"
 .String_TurnOff:       db "TURN OFF@"
 .String_LogOff:       db "LOG OFF@"
@@ -110,10 +113,11 @@ PokemonCenterPC:
 	db -1 ; end
 	
 	; PCPC_LAPTOP
-	db 4
+	db 5
 	db PCPCITEM_BILLS_PC
 	db PCPCITEM_PLAYERS_PC
 	db PCPCITEM_MOVE_REMINDER
+	db PCPCITEM_MOVE_DELETER
 	db PCPCITEM_LOG_OFF
 	db -1 ; end
 
@@ -199,6 +203,12 @@ MoveReminderPC:
     farcall MoveReminder
     and a
     ret
+	
+MoveDeleterPC:
+	call PC_PlayChoosePCSound
+	farcall MoveDeletion
+	and a
+	ret
 
 HallOfFamePC:
 	call PC_PlayChoosePCSound
