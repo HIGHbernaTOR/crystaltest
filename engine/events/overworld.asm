@@ -1618,7 +1618,18 @@ UnusedNothingHereText: ; unreferenced
 	text_end
 	
 LaptopFunction:
+	call GetMapPhoneService
+	and a
+	jr nz, .NoService
+
 	call .LoadLaptop
+	ld [wFieldMoveSucceeded], a
+	ret
+	
+.NoService:
+	ld hl, Script_LaptopNoService
+	call QueueScript
+	ld a, TRUE
 	and $7f
 	ld [wFieldMoveSucceeded], a
 	ret
@@ -1640,6 +1651,11 @@ LaptopFunction:
 	ld l, e
 	ret
 
+LaptopNoServiceSound:
+	ld de, SFX_NO_SIGNAL
+	call PlaySFX
+	call WaitSFX
+	ret
 
 SetUsingLaptopPC:
 	ld a, TRUE
@@ -1752,6 +1768,20 @@ Script_LoadLaptop_Register:
 	closetext
 	reloadmappart
 	end
+	
+Script_LaptopNoService:
+	opentext
+	callasm LaptopNoServiceSound
+	writetext LaptopNoServiceText
+	waitbutton
+	closetext
+	end
+	
+LaptopNoServiceText:
+	text "... ... ..."
+	line "The LAPTOP can't"
+	cont "connect from here."
+	done
 	
 ; new code place... come back here if you get into trouble.
 
