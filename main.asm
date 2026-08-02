@@ -161,6 +161,10 @@ SECTION "Battle Core", ROMX
 INCLUDE "engine/battle/core.asm"
 INCLUDE "data/battle/effect_command_pointers.asm"
 
+SECTION "Friendship Battle Bonuses", ROMX
+
+INCLUDE "engine/battle/friendship.asm"
+
 
 SECTION "bank10", ROMX
 

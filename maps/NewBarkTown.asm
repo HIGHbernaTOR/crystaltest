@@ -2,6 +2,7 @@
 	const NEWBARKTOWN_TEACHER
 	const NEWBARKTOWN_FISHER
 	const NEWBARKTOWN_RIVAL
+	const NEWBARKTOWN_FRIENDSHIP_TESTER
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
@@ -103,6 +104,34 @@ NewBarkTownTeacherScript:
 
 NewBarkTownFisherScript:
 	jumptextfaceplayer Text_ElmDiscoveredNewMon
+	
+NewBarkTownFriendshipTesterScript:
+	faceplayer
+	opentext
+	readvar VAR_PARTYCOUNT
+	ifequal 0, .NoPokemon
+
+	writetext NewBarkTownFriendshipTesterIntroText
+	yesorno
+	iffalse .Declined
+
+	loadmem wPartyMon1Happiness, 255
+	writetext NewBarkTownFriendshipTesterDoneText
+	waitbutton
+	closetext
+	end
+
+.NoPokemon:
+	writetext NewBarkTownFriendshipTesterNoPokemonText
+	waitbutton
+	closetext
+	end
+
+.Declined:
+	writetext NewBarkTownFriendshipTesterDeclinedText
+	waitbutton
+	closetext
+	end
 
 NewBarkTownRivalScript:
 	opentext
@@ -245,6 +274,33 @@ Text_ElmDiscoveredNewMon:
 	line "discovered some"
 	cont "new #MON."
 	done
+	
+NewBarkTownFriendshipTesterIntroText:
+	text "I can strengthen"
+	line "the bond with your"
+	cont "first #MON."
+
+	para "Would you like me"
+	line "to help?"
+	done
+
+NewBarkTownFriendshipTesterDoneText:
+	text "There! Your first"
+	line "#MON's bond is"
+
+	para "as strong as it"
+	line "can be!"
+	done
+
+NewBarkTownFriendshipTesterNoPokemonText:
+	text "You don't have any"
+	line "#MON with you."
+	done
+
+NewBarkTownFriendshipTesterDeclinedText:
+	text "All right. Come"
+	line "back anytime."
+	done
 
 NewBarkTownRivalText1:
 	text "<……>"
@@ -302,3 +358,4 @@ NewBarkTown_MapEvents:
 	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
 	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
 	object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN
+	object_event 15, 14, SPRITE_UNUSED_GUY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NewBarkTownFriendshipTesterScript, -1

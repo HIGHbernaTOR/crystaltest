@@ -497,7 +497,68 @@ EnduredText:
 	
 EnduredFriendshipText:
 	text "<TARGET>"
-	line "held on for you!"
+	line "held on so you"
+	cont "wouldn't worry!"
+	prompt
+	
+FriendshipCuredPoisonText:
+	text "<USER>"
+	line "shook off its"
+	cont "poison so you"
+	cont "wouldn't worry!"
+	prompt
+
+FriendshipCuredBurnText:
+	text "<USER>"
+	line "shook off its"
+	cont "burn so you"
+	cont "wouldn't worry!"
+	prompt
+
+FriendshipCuredParalysisText:
+	text "<USER>"
+	line "shook off its"
+	cont "paralysis so you"
+	cont "wouldn't worry!"
+	prompt
+
+FriendshipCuredSleepText:
+	text "<USER>"
+	line "woke up at your"
+	cont "call!"
+	prompt
+
+FriendshipCuredFreezeText:
+	text "<USER>"
+	line "thawed out so you"
+	cont "wouldn't worry!"
+	prompt
+	
+FriendshipCuredConfusionText:
+	text "<USER>"
+	line "shook off its"
+	cont "confusion at your"
+	cont "call!"
+	prompt
+	
+FriendshipCuredAttractText:
+	text "<USER>"
+	line "shook off its"
+	cont "infatuation!"
+	prompt
+	
+FriendshipDodgedAttackText:
+	text "<TARGET>"
+	line "dodged the attack"
+	cont "thanks to your"
+	cont "call!"
+	prompt
+	
+FriendshipPreventedStatDropText:
+	text "<TARGET>"
+	line "stood firm so its"
+	cont "stats wouldn't"
+	cont "fall!"
 	prompt
 
 InLoveWithText:

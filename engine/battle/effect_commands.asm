@@ -145,6 +145,8 @@ BattleCommand_CheckTurn:
 
 .no_recharge
 
+	call CheckFriendshipStatusRecovery
+
 	ld hl, wBattleMonStatus
 	ld a, [hl]
 	and SLP_MASK
@@ -239,6 +241,8 @@ BattleCommand_CheckTurn:
 
 .not_disabled
 
+	farcall CheckFriendshipConfusionRecovery
+
 	ld a, [wPlayerSubStatus3]
 	add a
 	jr nc, .not_confused
@@ -276,6 +280,8 @@ BattleCommand_CheckTurn:
 	jp EndTurn
 
 .not_confused
+
+	farcall CheckFriendshipAttractRecovery
 
 	ld a, [wPlayerSubStatus1]
 	add a ; bit SUBSTATUS_ATTRACT
@@ -360,6 +366,78 @@ OpponentCantMove:
 	call BattleCommand_SwitchTurn
 	call CantMove
 	jp BattleCommand_SwitchTurn
+	
+
+CheckFriendshipStatusRecovery:
+	; No effect unless the Pokémon has a major status condition.
+	ld a, [wBattleMonStatus]
+	and a
+	ret z
+
+	farcall CheckFriendshipBonusChance
+	ret nc
+
+	; Select a message before clearing the status.
+	ld a, [wBattleMonStatus]
+	and SLP_MASK
+	jr nz, .sleep
+
+	ld a, [wBattleMonStatus]
+	bit FRZ, a
+	jr nz, .freeze
+	bit BRN, a
+	jr nz, .burn
+	bit PAR, a
+	jr nz, .paralysis
+
+	; Poison and bad poison use the same major-status bit.
+	ld hl, FriendshipCuredPoisonText
+	jr .got_text
+
+.sleep
+	ld hl, FriendshipCuredSleepText
+	jr .got_text
+
+.freeze
+	ld hl, FriendshipCuredFreezeText
+	jr .got_text
+
+.burn
+	ld hl, FriendshipCuredBurnText
+	jr .got_text
+
+.paralysis
+	ld hl, FriendshipCuredParalysisText
+
+.got_text
+	; Preserve the chosen text pointer through the update routines.
+	push hl
+
+	; Clear the active Pokémon's major status.
+	xor a
+	ld [wBattleMonStatus], a
+
+	; Clear Toxic's escalating damage state.
+	ld [wPlayerToxicCount], a
+	ld hl, wPlayerSubStatus5
+	res SUBSTATUS_TOXIC, [hl]
+
+	; Clear Nightmare when sleep is removed.
+	ld hl, wPlayerSubStatus1
+	res SUBSTATUS_NIGHTMARE, [hl]
+
+	; Copy the cured status back into the party structure.
+	call UpdateBattleMonInParty
+
+	; Refresh the player's status display.
+	ld hl, UpdatePlayerHUD
+	call CallBattleCore
+	ld a, $1
+	ldh [hBGMapMode], a
+
+	pop hl
+	jp StdBattleTextbox
+	
 
 CheckEnemyTurn:
 	ld hl, wEnemySubStatus4
@@ -1195,6 +1273,8 @@ BattleCommand_Critical:
 	inc c
 
 .Tally:
+	farcall ApplyFriendshipCriticalStage
+
 	ld hl, CriticalHitChances
 	ld b, 0
 	add hl, bc
@@ -1557,22 +1637,22 @@ BattleCommand_CheckHit:
 	jp z, .Miss
 
 	call .LockOn
-	ret nz
+	jr nz, .Hit
 
 	call .FlyDigMoves
 	jp nz, .Miss
 
 	call .ThunderRain
-	ret z
+	jr z, .Hit
 
 	call .XAccuracy
-	ret nz
+	jr nz, .Hit
 
 	; Perfect-accuracy moves
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_ALWAYS_HIT
-	ret z
+	jr z, .Hit
 
 	call .StatModifiers
 
@@ -1610,7 +1690,9 @@ BattleCommand_CheckHit:
 	jr nc, .Miss
 
 .Hit:
-	ret
+	farcall CheckFriendshipDodge
+	ret nc
+	jr .Miss
 
 .Miss:
 ; Keep the damage value intact if we're using (Hi) Jump Kick.
@@ -1621,7 +1703,11 @@ BattleCommand_CheckHit:
 	call ResetDamage
 
 .Missed:
-	ld a, 1
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
+	inc a
 	ld [wAttackMissed], a
 	ret
 
@@ -2073,7 +2159,13 @@ BattleCommand_FailureText:
 	and a
 	ret z
 
+	; The friendship-dodge message was already displayed.
+	cp 2
+	jr z, .skip_failure_text
+
 	call GetFailureResultText
+
+.skip_failure_text
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVarAddr
 
@@ -4365,6 +4457,11 @@ BattleCommand_EvasionDown2:
 BattleCommand_StatDown:
 	ld [wLoweredStat], a
 
+	; The friendship-dodge message was already displayed.
+	ld a, [wEffectFailed]
+	cp 2
+	jp z, .FriendshipDodged
+
 	call CheckMist
 	jp nz, .Mist
 
@@ -4436,6 +4533,11 @@ BattleCommand_StatDown:
 
 	call CheckHiddenOpponent
 	jr nz, .Failed
+	
+	; Give a high-friendship player Pokémon a chance
+	; to resist an otherwise successful stat reduction.
+	farcall CheckFriendshipStatDropRecovery
+	jr c, .FriendshipPreventedStatDrop
 
 ; Accuracy/Evasion reduction don't involve stats.
 	ld [hl], b
@@ -4468,6 +4570,14 @@ BattleCommand_StatDown:
 	ld [wFailedMessage], a
 	ld a, 1
 	ld [wAttackMissed], a
+	ret
+
+.FriendshipDodged:
+.FriendshipPreventedStatDrop:
+	; The friendship message was already displayed.
+	; Suppress both success and failure text afterward.
+	ld a, 4
+	ld [wFailedMessage], a
 	ret
 
 .Failed:
@@ -4631,6 +4741,8 @@ BattleCommand_StatUpFailText:
 BattleCommand_StatDownFailText:
 	ld a, [wFailedMessage]
 	and a
+	ret z
+	cp 4
 	ret z
 	push af
 	call BattleCommand_MoveDelay
@@ -5863,6 +5975,11 @@ BattleCommand_FinishConfusingTarget:
 	jp CallBattleCore
 
 BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
+	; The friendship-dodge message was already displayed.
+	ld a, [wEffectFailed]
+	cp 2
+	ret z
+
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_CONFUSE_HIT
