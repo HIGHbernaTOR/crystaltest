@@ -195,10 +195,8 @@ INCLUDE "mobile/mobile_12_2.asm"
 INCLUDE "engine/events/buena_menu.asm"
 
 
-SECTION "Tileset Palettes", ROMX
+SECTION "" , ROMX
 
-INCLUDE "engine/tilesets/map_palettes.asm"
-INCLUDE "gfx/tileset_palette_maps.asm"
 
 
 SECTION "bank13", ROMX
