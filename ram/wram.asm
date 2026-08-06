@@ -2686,10 +2686,6 @@ wCurBaseDataEnd::
 wCurDamage:: dw
 
 wTilesetDataAddress:: dw
-SECTION "Surrounding Data", WRAMX
-
-wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
-wSurroundingAttributes:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 
 
 wMornEncounterRate::  db
@@ -2728,6 +2724,12 @@ wMonTriedToEvolve:: db
 wTimeOfDay:: db
 
 	ds 1
+	
+	
+SECTION "Surrounding Data", WRAMX
+
+wSurroundingTiles:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
+wSurroundingAttributes:: ds SURROUNDING_WIDTH * SURROUNDING_HEIGHT
 
 
 SECTION "Enemy Party", WRAMX

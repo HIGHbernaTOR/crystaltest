@@ -14,7 +14,7 @@ TilesetKantoAnim:
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateWaterPalette
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe AnimateFlowerTile
 	tileframe WaitTileAnimation
@@ -27,7 +27,7 @@ TilesetParkAnim:
 	tileframe WaitTileAnimation
 	tileframe AnimateFountainTile,     vTiles2 tile $5f
 	tileframe WaitTileAnimation
-	tileframe AnimateWaterPalette
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe AnimateFlowerTile
 	tileframe WaitTileAnimation
@@ -45,7 +45,7 @@ TilesetForestAnim:
 	tileframe ForestTreeRightAnimation2
 	tileframe AnimateFlowerTile
 	tileframe AnimateWaterTile,        vTiles2 tile $14
-	tileframe AnimateWaterPalette
+	tileframe WaitTileAnimation
 	tileframe StandingTileFrame8
 	tileframe DoneTileAnimation
 
@@ -53,7 +53,7 @@ TilesetJohtoAnim:
 	tileframe AnimateWaterTile,        vTiles2 tile $14
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateWaterPalette
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe AnimateFlowerTile
 	tileframe AnimateWhirlpoolTile,    WhirlpoolFrames1
@@ -100,7 +100,7 @@ TilesetPortAnim:
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
-	tileframe AnimateWaterPalette
+	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
 	tileframe WaitTileAnimation
@@ -160,7 +160,7 @@ TilesetDarkCaveAnim:
 	tileframe FlickeringCaveEntrancePalette
 	tileframe WriteTileFromAnimBuffer, vTiles2 tile $14
 	tileframe FlickeringCaveEntrancePalette
-	tileframe AnimateWaterPalette
+	tileframe WaitTileAnimation
 	tileframe FlickeringCaveEntrancePalette
 	tileframe ReadTileToAnimBuffer,    vTiles2 tile $40
 	tileframe FlickeringCaveEntrancePalette
@@ -181,7 +181,7 @@ TilesetIcePathAnim:
 	tileframe FlickeringCaveEntrancePalette
 	tileframe WriteTileFromAnimBuffer, vTiles2 tile $35
 	tileframe FlickeringCaveEntrancePalette
-	tileframe AnimateWaterPalette
+	tileframe WaitTileAnimation
 	tileframe FlickeringCaveEntrancePalette
 	tileframe ReadTileToAnimBuffer,    vTiles2 tile $31
 	tileframe FlickeringCaveEntrancePalette
